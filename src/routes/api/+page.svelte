@@ -29,7 +29,6 @@
 	const QUESTION_SCHEMA = '{text, response}';
 
 	const sidebarSections = [
-		{ id: 'visao-geral', label: 'Visão Geral' },
 		{ id: 'oracoes', label: 'Orações e Exame', children: [
 			{ id: 'ep-health', label: 'Health Check' },
 			{ id: 'ep-list', label: 'Listar Orações' },
@@ -99,30 +98,6 @@
 
 		<!-- Content -->
 		<div class="flex-1 min-w-0">
-
-			<!-- Visão Geral -->
-			<section id="visao-geral" class="scroll-mt-24 pb-16">
-				<div class="flex flex-col mb-8">
-					<span class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Visão Geral</span>
-				</div>
-
-				<div class="grid md:grid-cols-2 gap-6">
-					<div class="bg-bg-dark-card border border-border-gold/20 rounded-xl p-6 hover:border-primary/40 transition-normal">
-						<div class="flex items-center gap-3 mb-4">
-							<div>
-								<h3 class="font-serif text-lg font-medium text-text-light">API de Liturgia Diária</h3>
-								<p class="text-xs text-text-secondary">Mantida por <a href="https://github.com/Dancrf" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Dancrf</a></p>
-							</div>
-						</div>
-						<p class="text-sm text-text-secondary leading-relaxed mb-4">
-							API pública que fornece as orações e leituras do dia da Santa Missa. Projeto open-source no GitHub.
-						</p>
-						<a href="https://liturgia.up.railway.app/v2/" target="_blank" rel="noopener noreferrer" class="text-xs text-primary font-mono hover:underline inline-flex items-center gap-1">
-							liturgia.up.railway.app <ExternalLink class="w-3 h-3" />
-						</a>
-					</div>
-				</div>
-			</section>
 
 			<!-- API de Orações -->
 			<section id="oracoes" class="scroll-mt-24 pb-16">

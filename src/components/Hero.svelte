@@ -19,9 +19,6 @@
 			<!-- Left Column: Content -->
 			<div class="lg:col-span-6 flex flex-col items-start text-left animate-fade-in-up">
 				<!-- Supertag -->
-				<span class="text-xs font-bold tracking-widest text-primary uppercase mb-4">
-					Fé. Organização. Devoção.
-				</span>
 
 				<!-- Title -->
 				<h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-text-light tracking-tight mb-6">
