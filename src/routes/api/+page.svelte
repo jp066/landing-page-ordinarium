@@ -51,8 +51,70 @@
 </script>
 
 <svelte:head>
-	<title>API | Ordinarium</title>
-	<meta name="description" content="Documentação das APIs utilizadas pelo Ordinarium: API de Orações e Exame de Consciência, e referência da API de Liturgia Diária." />
+	<title>API | Ordinarium - Documentação para Desenvolvedores</title>
+	<meta
+		name="description"
+		content="Documentação das APIs utilizadas pelo Ordinarium: API de Orações e Exame de Consciência, e referência da API de Liturgia Diária."
+	/>
+	<meta name="keywords" content="api ordinarium, api liturgia diaria, api orações, desenvolvedores católicos, documentação api" />
+	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href="https://ordinarium.vercel.app/api" />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://ordinarium.vercel.app/api" />
+	<meta property="og:title" content="API | Ordinarium - Documentação para Desenvolvedores" />
+	<meta
+		property="og:description"
+		content="Documentação das APIs utilizadas pelo Ordinarium: API de Orações e Exame de Consciência, e referência da API de Liturgia Diária."
+	/>
+	<meta property="og:image" content="https://ordinarium.vercel.app/assets/image.png" />
+	<meta property="og:image:alt" content="Documentação da API Ordinarium" />
+	<meta property="og:locale" content="pt_BR" />
+	<meta property="og:site_name" content="Ordinarium" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://ordinarium.vercel.app/api" />
+	<meta property="twitter:title" content="API | Ordinarium - Documentação para Desenvolvedores" />
+	<meta
+		property="twitter:description"
+		content="Documentação das APIs utilizadas pelo Ordinarium: API de Orações e Exame de Consciência, e referência da API de Liturgia Diária."
+	/>
+	<meta property="twitter:image" content="https://ordinarium.vercel.app/assets/image.png" />
+
+	<!-- Structured Data (JSON-LD) -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "WebPage",
+					"@id": "https://ordinarium.vercel.app/api/#webpage",
+					"url": "https://ordinarium.vercel.app/api",
+					"name": "API Ordinarium - Documentação para Desenvolvedores",
+					"description": "Documentação das APIs utilizadas pelo Ordinarium: API de Orações e Exame de Consciência, e referência da API de Liturgia Diária.",
+					"inLanguage": "pt-BR"
+				},
+				{
+					"@type": "TechArticle",
+					"@id": "https://ordinarium.vercel.app/api/#article",
+					"headline": "API Ordinarium - Documentação para Desenvolvedores",
+					"description": "Documentação das APIs utilizadas pelo Ordinarium: API de Orações e Exame de Consciência, e referência da API de Liturgia Diária.",
+					"inLanguage": "pt-BR",
+					"mainEntityOfPage": "https://ordinarium.vercel.app/api",
+					"publisher": {
+						"@type": "Organization",
+						"name": "Ordinarium",
+						"logo": {
+							"@type": "ImageObject",
+							"url": "https://ordinarium.vercel.app/assets/favicon.png"
+						}
+					}
+				}
+			]
+		}
+	</script>
 </svelte:head>
 
 <Navbar />
