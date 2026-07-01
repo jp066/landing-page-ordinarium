@@ -66,9 +66,6 @@
 		<!-- About the Project Info Block -->
 		<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-12 mb-16 pb-16 border-b border-border-gold/20 text-left">
 			<div class="lg:col-span-7 flex flex-col justify-center">
-				<h3 class="text-2xl font-serif font-semibold text-text-dark mb-4">
-					De uma simples ideia para buscar confissões, nasceu o <span class="font-gothic text-xl font-bold tracking-wide text-primary">Ordinarium</span>
-				</h3>
 				<p class="text-sm text-text-dark/75 leading-relaxed mb-4 font-sans">
 					O que começou com a simples necessidade (e a raiva rsrs) de buscar horários de confissões cresceu e se tornou um companheiro espiritual completo. Hoje, o <span class="font-gothic text-xl font-bold tracking-wide text-primary">Ordinarium</span> é um portal independente e sem fins lucrativos que une liturgia diária, orações tradicionais e o diretório de paróquias para apoiar sua caminhada de fé todos os dias.
 				</p>
