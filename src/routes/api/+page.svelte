@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ExternalLink, BookOpen, FileText, Search, Shuffle, Heart, List, Activity, CalendarDays } from '@lucide/svelte';
+	import { ExternalLink, BookOpen, FileText, Search, Shuffle, Heart, List, Activity, CalendarDays, Church, MapPin } from '@lucide/svelte';
 	import Navbar from '../../components/Navbar.svelte';
 	import EndpointCard from '../../components/EndpointCard.svelte';
 	import Footer from '../../components/Footer.svelte';
@@ -23,12 +23,35 @@
 		{ method: 'GET', path: '/v2/?periodo={dias}', desc: 'Liturgia de um período (máx: 7 dias)' },
 	];
 
+	const backendEndpoints = [
+		{ method: 'GET', path: '/api/v1/paroquias', desc: 'Listar todas as paróquias' },
+		{ method: 'GET', path: '/api/v1/paroquias/:id', desc: 'Obter paróquia por ID' },
+	];
+
+	const bibleEndpoints = [
+		{ method: 'GET', path: '/api/v1/bible/books', desc: 'Listar os 73 livros da Bíblia' },
+		{ method: 'GET', path: '/api/v1/bible/books/{book}', desc: 'Detalhes de um livro' },
+		{ method: 'GET', path: '/api/v1/bible/search?q={termo}', desc: 'Busca textual (mín. 3 caracteres)' },
+		{ method: 'GET', path: '/api/v1/bible/{book}/{chapter}', desc: 'Capítulo completo' },
+		{ method: 'GET', path: '/api/v1/bible/{book}/{chapter}/{verse}', desc: 'Versículo específico' },
+	];
+
+	const santoEndpoints = [
+		{ method: 'GET', path: '/', desc: 'Santo do dia atual' },
+		{ method: 'GET', path: '/dia={dia}&mes={mes}', desc: 'Santo de uma data específica' },
+	];
+
 	const PATH_SEARCH = '/api/v1/prayers/search?q={termo}';
 	const PATH_SLUG = '/api/v1/prayers/{slug}';
 	const PATH_CATEGORY = '/api/v1/examination/{categoria}';
 	const QUESTION_SCHEMA = '{text, response}';
 
 	const sidebarSections = [
+		{ id: 'backend', label: 'Backend API', children: [
+			{ id: 'ep-parish-list', label: 'Listar Paróquias' },
+			{ id: 'ep-parish-get', label: 'Paróquia por ID' },
+			{ id: 'ep-parish-model', label: 'Modelo Parish' },
+		]},
 		{ id: 'oracoes', label: 'Orações e Exame', children: [
 			{ id: 'ep-health', label: 'Health Check' },
 			{ id: 'ep-list', label: 'Listar Orações' },
@@ -41,6 +64,14 @@
 			{ id: 'ep-models', label: 'Modelos de Dados' },
 			{ id: 'ep-errors', label: 'Códigos de Erro' },
 		]},
+		{ id: 'bible', label: 'Bíblia Sagrada', children: [
+			{ id: 'ep-bible-books', label: 'Listar Livros' },
+			{ id: 'ep-bible-book', label: 'Detalhes do Livro' },
+			{ id: 'ep-bible-search', label: 'Busca Textual' },
+			{ id: 'ep-bible-chapter', label: 'Capítulo' },
+			{ id: 'ep-bible-verse', label: 'Versículo' },
+		]},
+		{ id: 'santo', label: 'Santo do Dia' },
 		{ id: 'liturgia', label: 'Liturgia Diária' },
 	];
 
@@ -54,9 +85,9 @@
 	<title>API | Ordinarium - Documentação para Desenvolvedores</title>
 	<meta
 		name="description"
-		content="Documentação das APIs utilizadas pelo Ordinarium: API de Orações e Exame de Consciência, e referência da API de Liturgia Diária."
+		content="Documentação das APIs do Ordinarium: Paróquias, Orações, Bíblia Sagrada, Exame de Consciência, Santo do Dia e Liturgia Diária."
 	/>
-	<meta name="keywords" content="api ordinarium, api liturgia diaria, api orações, desenvolvedores católicos, documentação api" />
+	<meta name="keywords" content="api ordinarium, api paróquias, api orações, api bíblia, api liturgia diaria, desenvolvedores católicos, documentação api" />
 	<meta name="robots" content="index, follow" />
 	<link rel="canonical" href="https://ordinarium.vercel.app/api" />
 
@@ -66,7 +97,7 @@
 	<meta property="og:title" content="API | Ordinarium - Documentação para Desenvolvedores" />
 	<meta
 		property="og:description"
-		content="Documentação das APIs utilizadas pelo Ordinarium: API de Orações e Exame de Consciência, e referência da API de Liturgia Diária."
+		content="Documentação das APIs do Ordinarium: Paróquias, Orações, Bíblia Sagrada, Exame de Consciência, Santo do Dia e Liturgia Diária."
 	/>
 	<meta property="og:image" content="https://ordinarium.vercel.app/assets/image.png" />
 	<meta property="og:image:alt" content="Documentação da API Ordinarium" />
@@ -79,7 +110,7 @@
 	<meta property="twitter:title" content="API | Ordinarium - Documentação para Desenvolvedores" />
 	<meta
 		property="twitter:description"
-		content="Documentação das APIs utilizadas pelo Ordinarium: API de Orações e Exame de Consciência, e referência da API de Liturgia Diária."
+		content="Documentação das APIs do Ordinarium: Paróquias, Orações, Bíblia Sagrada, Exame de Consciência, Santo do Dia e Liturgia Diária."
 	/>
 	<meta property="twitter:image" content="https://ordinarium.vercel.app/assets/image.png" />
 
@@ -93,14 +124,14 @@
 					"@id": "https://ordinarium.vercel.app/api/#webpage",
 					"url": "https://ordinarium.vercel.app/api",
 					"name": "API Ordinarium - Documentação para Desenvolvedores",
-					"description": "Documentação das APIs utilizadas pelo Ordinarium: API de Orações e Exame de Consciência, e referência da API de Liturgia Diária.",
+					"description": "Documentação das APIs do Ordinarium: Paróquias, Orações, Bíblia Sagrada, Exame de Consciência, Santo do Dia e Liturgia Diária.",
 					"inLanguage": "pt-BR"
 				},
 				{
 					"@type": "TechArticle",
 					"@id": "https://ordinarium.vercel.app/api/#article",
 					"headline": "API Ordinarium - Documentação para Desenvolvedores",
-					"description": "Documentação das APIs utilizadas pelo Ordinarium: API de Orações e Exame de Consciência, e referência da API de Liturgia Diária.",
+					"description": "Documentação das APIs do Ordinarium: Paróquias, Orações, Bíblia Sagrada, Exame de Consciência, Santo do Dia e Liturgia Diária.",
 					"inLanguage": "pt-BR",
 					"mainEntityOfPage": "https://ordinarium.vercel.app/api",
 					"publisher": {
@@ -161,7 +192,138 @@
 		<!-- Content -->
 		<div class="flex-1 min-w-0">
 
-			<!-- API de Orações -->
+			<!-- ==================== BACKEND API ==================== -->
+			<section id="backend" class="scroll-mt-24 pb-16">
+				<div class="flex flex-col mb-8">
+					<span class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">API Própria</span>
+					<h2 class="text-3xl md:text-4xl font-serif font-medium leading-tight text-text-light max-w-3xl">
+						Backend — Paróquias
+					</h2>
+					<p class="mt-4 text-base text-text-secondary max-w-2xl leading-relaxed">
+						Base URL: <code class="text-primary bg-primary-dim px-2 py-0.5 rounded text-sm font-mono">https://api.ordinarium.com.br</code>
+					</p>
+					<p class="mt-2 text-sm text-text-secondary max-w-2xl leading-relaxed">
+						API REST para consulta de paróquias da Arquidiocese de Teresina. Desenvolvida com NestJS e Drizzle ORM.
+					</p>
+				</div>
+
+				<!-- Endpoints Table -->
+				<div class="bg-bg-dark-card border border-border-gold/20 rounded-xl overflow-hidden mb-10">
+					<div class="p-5 border-b border-border-gold/20 flex items-center gap-2">
+						<List class="w-4 h-4 text-primary" />
+						<h3 class="text-sm font-semibold text-text-light uppercase tracking-wider">Endpoints</h3>
+					</div>
+					<div class="overflow-x-auto">
+						<table class="w-full text-sm">
+							<thead>
+								<tr class="border-b border-border-gold/10">
+									<th class="text-left p-4 text-text-secondary font-medium uppercase tracking-wider text-xs">Método</th>
+									<th class="text-left p-4 text-text-secondary font-medium uppercase tracking-wider text-xs">Rota</th>
+									<th class="text-left p-4 text-text-secondary font-medium uppercase tracking-wider text-xs">Descrição</th>
+								</tr>
+							</thead>
+							<tbody>
+								{#each backendEndpoints as ep}
+									<tr class="border-b border-border-gold/10 last:border-0 hover:bg-white/[0.02] transition-fast">
+										<td class="p-4">
+											<span class="inline-block px-2 py-0.5 rounded text-xs font-mono font-bold bg-green-900/30 text-green-400">GET</span>
+										</td>
+										<td class="p-4 font-mono text-xs text-text-light">{ep.path}</td>
+										<td class="p-4 text-text-secondary text-xs">{ep.desc}</td>
+									</tr>
+								{/each}
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<EndpointCard
+					id="ep-parish-list"
+					icon={MapPin}
+					title="Listar Paróquias"
+					desc="Retorna a lista completa de paróquias cadastradas, incluindo endereço, contato, coordenadas geográficas e dados eclesiais."
+					path="/api/v1/paroquias"
+					curl='curl https://api.ordinarium.com.br/api/v1/paroquias'
+					response={`[
+  {
+    "id": 1,
+    "forania": "Forania Centro",
+    "tipo": "paroquia",
+    "nome": "Paróquia São José",
+    "endereco": "Rua Direita, 480 - Centro, Teresina - PI",
+    "bairro": "Centro",
+    "cep": "64000-040",
+    "telefone": "(86) 3211-1234",
+    "email": "paroquia.sjose@arquiteresina.com.br",
+    "latitude": "-5.0892",
+    "longitude": "-42.8019",
+    "imagemUrl": "https://example.com/paroquia.jpg"
+  }
+]`}
+				/>
+
+				<EndpointCard
+					id="ep-parish-get"
+					icon={MapPin}
+					title="Paróquia por ID"
+					desc="Retorna uma paróquia específica pelo seu ID numérico."
+					path="/api/v1/paroquias/:id"
+					curl='curl https://api.ordinarium.com.br/api/v1/paroquias/1'
+					response={`{
+  "id": 1,
+  "forania": "Forania Centro",
+  "tipo": "paroquia",
+  "nome": "Paróquia São José",
+  "endereco": "Rua Direita, 480 - Centro, Teresina - PI",
+  "bairro": "Centro",
+  "cep": "64000-040",
+  "telefone": "(86) 3211-1234",
+  "email": "paroquia.sjose@arquiteresina.com.br",
+  "instagram": "@paroquiasjose",
+  "paroco": "Pe. Carlos Mendes",
+  "vigarios": ["Pe. João Lima"],
+  "diaconos": ["Diácono Pedro Souza"],
+  "latitude": "-5.0892",
+  "longitude": "-42.8019"
+}`}
+				/>
+
+				<!-- Modelo Parish -->
+				<div id="ep-parish-model" class="scroll-mt-24 mt-12 bg-bg-dark-card border border-border-gold/20 rounded-xl p-6 md:p-8">
+					<h3 class="font-serif text-xl font-medium text-text-light mb-6">Modelo de Dados — Parish</h3>
+					<div class="overflow-x-auto">
+						<table class="w-full text-sm">
+							<thead>
+								<tr class="border-b border-border-gold/10">
+									<th class="text-left p-2 text-text-secondary font-medium text-xs uppercase tracking-wider">Campo</th>
+									<th class="text-left p-2 text-text-secondary font-medium text-xs uppercase tracking-wider">Tipo</th>
+									<th class="text-left p-2 text-text-secondary font-medium text-xs uppercase tracking-wider">Descrição</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="border-b border-border-gold/10"><td class="p-2 font-mono text-xs text-text-light">id</td><td class="p-2 text-xs text-text-secondary">integer</td><td class="p-2 text-xs text-text-secondary">ID único auto-incremental</td></tr>
+								<tr class="border-b border-border-gold/10"><td class="p-2 font-mono text-xs text-text-light">forania</td><td class="p-2 text-xs text-text-secondary">string</td><td class="p-2 text-xs text-text-secondary">Forania à qual pertence</td></tr>
+								<tr class="border-b border-border-gold/10"><td class="p-2 font-mono text-xs text-text-light">tipo</td><td class="p-2 text-xs text-text-secondary">string</td><td class="p-2 text-xs text-text-secondary">paroquia, capela, capelania, diaconia, area_pastoral, santuario</td></tr>
+								<tr class="border-b border-border-gold/10"><td class="p-2 font-mono text-xs text-text-light">nome</td><td class="p-2 text-xs text-text-secondary">string</td><td class="p-2 text-xs text-text-secondary">Nome oficial da paróquia</td></tr>
+								<tr class="border-b border-border-gold/10"><td class="p-2 font-mono text-xs text-text-light">endereco</td><td class="p-2 text-xs text-text-secondary">string | null</td><td class="p-2 text-xs text-text-secondary">Endereço completo</td></tr>
+								<tr class="border-b border-border-gold/10"><td class="p-2 font-mono text-xs text-text-light">bairro</td><td class="p-2 text-xs text-text-secondary">string | null</td><td class="p-2 text-xs text-text-secondary">Bairro</td></tr>
+								<tr class="border-b border-border-gold/10"><td class="p-2 font-mono text-xs text-text-light">cep</td><td class="p-2 text-xs text-text-secondary">string | null</td><td class="p-2 text-xs text-text-secondary">CEP</td></tr>
+								<tr class="border-b border-border-gold/10"><td class="p-2 font-mono text-xs text-text-light">telefone</td><td class="p-2 text-xs text-text-secondary">string | null</td><td class="p-2 text-xs text-text-secondary">Telefone(s) de contato</td></tr>
+								<tr class="border-b border-border-gold/10"><td class="p-2 font-mono text-xs text-text-light">email</td><td class="p-2 text-xs text-text-secondary">string | null</td><td class="p-2 text-xs text-text-secondary">E-mail de contato</td></tr>
+								<tr class="border-b border-border-gold/10"><td class="p-2 font-mono text-xs text-text-light">instagram</td><td class="p-2 text-xs text-text-secondary">string | null</td><td class="p-2 text-xs text-text-secondary">Perfil do Instagram</td></tr>
+								<tr class="border-b border-border-gold/10"><td class="p-2 font-mono text-xs text-text-light">site</td><td class="p-2 text-xs text-text-secondary">string | null</td><td class="p-2 text-xs text-text-secondary">Site oficial</td></tr>
+								<tr class="border-b border-border-gold/10"><td class="p-2 font-mono text-xs text-text-light">paroco</td><td class="p-2 text-xs text-text-secondary">string | null</td><td class="p-2 text-xs text-text-secondary">Pároco atual</td></tr>
+								<tr class="border-b border-border-gold/10"><td class="p-2 font-mono text-xs text-text-light">vigarios</td><td class="p-2 text-xs text-text-secondary">string[]</td><td class="p-2 text-xs text-text-secondary">Vigários</td></tr>
+								<tr class="border-b border-border-gold/10"><td class="p-2 font-mono text-xs text-text-light">diaconos</td><td class="p-2 text-xs text-text-secondary">string[]</td><td class="p-2 text-xs text-text-secondary">Diáconos</td></tr>
+								<tr class="border-b border-border-gold/10"><td class="p-2 font-mono text-xs text-text-light">latitude</td><td class="p-2 text-xs text-text-secondary">number | null</td><td class="p-2 text-xs text-text-secondary">Latitude geográfica</td></tr>
+								<tr><td class="p-2 font-mono text-xs text-text-light">longitude</td><td class="p-2 text-xs text-text-secondary">number | null</td><td class="p-2 text-xs text-text-secondary">Longitude geográfica</td></tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<!-- ==================== ORAÇÕES E EXAME ==================== -->
 			<section id="oracoes" class="scroll-mt-24 pb-16">
 				<div class="flex flex-col mb-8">
 					<span class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">API Própria</span>
@@ -429,7 +591,258 @@
 				</div>
 			</section>
 
-			<!-- API de Liturgia Diária -->
+			<!-- ==================== BÍBLIA SAGRADA ==================== -->
+			<section id="bible" class="scroll-mt-24 pb-16">
+				<div class="flex flex-col mb-8">
+					<span class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">API Própria</span>
+					<h2 class="text-3xl md:text-4xl font-serif font-medium leading-tight text-text-light max-w-3xl">
+						Bíblia Sagrada
+					</h2>
+					<p class="mt-4 text-base text-text-secondary max-w-2xl leading-relaxed">
+						Base URL: <code class="text-primary bg-primary-dim px-2 py-0.5 rounded text-sm font-mono">https://api.ordinarium.com.br</code>
+					</p>
+					<p class="mt-2 text-sm text-text-secondary max-w-2xl leading-relaxed">
+						Bíblia Sagrada Católica completa — 73 livros (incluindo deuterocanônicos) com busca textual, capítulos e versículos. Suporta busca por nome ou abreviação do livro.
+					</p>
+				</div>
+
+				<!-- Endpoints Table -->
+				<div class="bg-bg-dark-card border border-border-gold/20 rounded-xl overflow-hidden mb-10">
+					<div class="p-5 border-b border-border-gold/20 flex items-center gap-2">
+						<List class="w-4 h-4 text-primary" />
+						<h3 class="text-sm font-semibold text-text-light uppercase tracking-wider">Endpoints</h3>
+					</div>
+					<div class="overflow-x-auto">
+						<table class="w-full text-sm">
+							<thead>
+								<tr class="border-b border-border-gold/10">
+									<th class="text-left p-4 text-text-secondary font-medium uppercase tracking-wider text-xs">Método</th>
+									<th class="text-left p-4 text-text-secondary font-medium uppercase tracking-wider text-xs">Rota</th>
+									<th class="text-left p-4 text-text-secondary font-medium uppercase tracking-wider text-xs">Descrição</th>
+								</tr>
+							</thead>
+							<tbody>
+								{#each bibleEndpoints as ep}
+									<tr class="border-b border-border-gold/10 last:border-0 hover:bg-white/[0.02] transition-fast">
+										<td class="p-4">
+											<span class="inline-block px-2 py-0.5 rounded text-xs font-mono font-bold bg-green-900/30 text-green-400">GET</span>
+										</td>
+										<td class="p-4 font-mono text-xs text-text-light">{ep.path}</td>
+										<td class="p-4 text-text-secondary text-xs">{ep.desc}</td>
+									</tr>
+								{/each}
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<EndpointCard
+					id="ep-bible-books"
+					icon={BookOpen}
+					title="Listar Livros"
+					desc="Retorna os 73 livros da Bíblia Católica (incluindo deuterocanônicos), com nome, abreviação, quantidade de capítulos e testamento."
+					path="/api/v1/bible/books"
+					curl='curl https://api.ordinarium.com.br/api/v1/bible/books'
+					response={`[
+  {
+    "name": "Gênesis",
+    "abbrev": "gn",
+    "chapters_count": 50,
+    "testament": "Antigo"
+  },
+  {
+    "name": "Evangelho segundo S. João",
+    "abbrev": "joao",
+    "chapters_count": 21,
+    "testament": "Novo"
+  }
+]`}
+				/>
+
+				<EndpointCard
+					id="ep-bible-book"
+					icon={BookOpen}
+					title="Detalhes do Livro"
+					desc="Retorna informações resumidas sobre um livro específico, identificado por nome ou abreviação."
+					path="/api/v1/bible/books/{'{'}book{'}'}"
+					curl='curl https://api.ordinarium.com.br/api/v1/bible/books/gn'
+					response={`{
+  "name": "Gênesis",
+  "abbrev": "gn",
+  "chapters_count": 50,
+  "testament": "Antigo"
+}`}
+				/>
+
+				<EndpointCard
+					id="ep-bible-search"
+					icon={Search}
+					title="Busca Textual"
+					desc="Busca uma palavra ou frase em toda a Bíblia, retornando as ocorrências com livro, capítulo e versículo."
+					path="/api/v1/bible/search?q={'{'}termo{'}'}"
+					curl='curl "https://api.ordinarium.com.br/api/v1/bible/search?q=amor"'
+					response={`[
+  {
+    "book": "Evangelho segundo S. João",
+    "abbrev": "joao",
+    "chapter": 3,
+    "verse": 16,
+    "text": "Porque Deus amou o mundo de tal modo..."
+  }
+]`}
+				>
+					{#snippet children()}
+						<div class="mt-3">
+							<p class="text-xs text-text-secondary mb-1">O termo de busca deve conter pelo menos 3 caracteres.</p>
+						</div>
+					{/snippet}
+				</EndpointCard>
+
+				<EndpointCard
+					id="ep-bible-chapter"
+					icon={BookOpen}
+					title="Capítulo Completo"
+					desc="Retorna todos os versículos de um capítulo de um livro específico."
+					path="/api/v1/bible/{'{'}book{'}'}/{ '{'}chapter{'}'}"
+					curl='curl https://api.ordinarium.com.br/api/v1/bible/joao/3'
+					response={`{
+  "chapter": 3,
+  "verses": [
+    { "number": 1, "text": "Havia um homem dos fariseus..." },
+    { "number": 2, "text": "Este foi ter de noite com Jesus..." },
+    { "number": 16, "text": "Porque Deus amou o mundo de tal modo..." }
+  ]
+}`}
+				/>
+
+				<EndpointCard
+					id="ep-bible-verse"
+					icon={FileText}
+					title="Versículo Específico"
+					desc="Retorna o texto de um versículo específico de um capítulo e livro selecionados."
+					path="/api/v1/bible/{'{'}book{'}'}/{ '{'}chapter{'}'}/{ '{'}verse{'}'}"
+					curl='curl https://api.ordinarium.com.br/api/v1/bible/joao/3/16'
+					response={`{
+  "number": 16,
+  "text": "Porque Deus amou o mundo de tal modo, que deu o seu Filho Unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna."
+}`}
+				/>
+			</section>
+
+			<!-- ==================== SANTO DO DIA ==================== -->
+			<section id="santo" class="scroll-mt-24 pb-16">
+				<div class="flex flex-col mb-8">
+					<span class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">API Própria</span>
+					<h2 class="text-3xl md:text-4xl font-serif font-medium leading-tight text-text-light max-w-3xl">
+						Santo do Dia
+					</h2>
+					<p class="mt-4 text-base text-text-secondary max-w-2xl leading-relaxed">
+						Base URL: <code class="text-primary bg-primary-dim px-2 py-0.5 rounded text-sm font-mono">https://api.ordinarium.com.br</code>
+					</p>
+					<p class="mt-2 text-sm text-text-secondary max-w-2xl leading-relaxed">
+						API de web scraping que obtém informações sobre o santo do dia a partir do site A12. Retorna nome, imagem, história, reflexão e oração.
+					</p>
+				</div>
+
+				<!-- Endpoints Table -->
+				<div class="bg-bg-dark-card border border-border-gold/20 rounded-xl overflow-hidden mb-10">
+					<div class="p-5 border-b border-border-gold/20 flex items-center gap-2">
+						<List class="w-4 h-4 text-primary" />
+						<h3 class="text-sm font-semibold text-text-light uppercase tracking-wider">Endpoints</h3>
+					</div>
+					<div class="overflow-x-auto">
+						<table class="w-full text-sm">
+							<thead>
+								<tr class="border-b border-border-gold/10">
+									<th class="text-left p-4 text-text-secondary font-medium uppercase tracking-wider text-xs">Método</th>
+									<th class="text-left p-4 text-text-secondary font-medium uppercase tracking-wider text-xs">Rota</th>
+									<th class="text-left p-4 text-text-secondary font-medium uppercase tracking-wider text-xs">Descrição</th>
+								</tr>
+							</thead>
+							<tbody>
+								{#each santoEndpoints as ep}
+									<tr class="border-b border-border-gold/10 last:border-0 hover:bg-white/[0.02] transition-fast">
+										<td class="p-4">
+											<span class="inline-block px-2 py-0.5 rounded text-xs font-mono font-bold bg-green-900/30 text-green-400">GET</span>
+										</td>
+										<td class="p-4 font-mono text-xs text-text-light">{ep.path}</td>
+										<td class="p-4 text-text-secondary text-xs">{ep.desc}</td>
+									</tr>
+								{/each}
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<EndpointCard
+					id="ep-santo-today"
+					icon={CalendarDays}
+					title="Santo do Dia Atual"
+					desc="Retorna o(s) santo(s) celebrado(s) no dia atual, com nome, imagem, história, reflexão e oração."
+					path="/santo-do-dia/"
+					curl='curl https://api.ordinarium.com.br/santo-do-dia/'
+					response={`{
+  "results": [
+    {
+      "nome": "São João Bosco",
+      "imagem": "https://www.a12.com/caminho-para-imagem.jpg",
+      "historia": "João Bosco nasceu em 16 de agosto de 1815...",
+      "reflexao": "A vida de São João Bosco nos ensina...",
+      "oracao": "Ó Deus, que concedestes a São João Bosco..."
+    }
+  ]
+}`}
+				/>
+
+				<EndpointCard
+					id="ep-santo-date"
+					icon={CalendarDays}
+					title="Santo por Data"
+					desc="Retorna o(s) santo(s) celebrado(s) em uma data específica."
+					path="/santo-do-dia/dia={'{'}dia{'}'}&mes={'{'}mes{'}'}"
+					curl='curl "https://api.ordinarium.com.br/santo-do-dia/dia=5&mes=6"'
+					response={`{
+  "results": [
+    {
+      "nome": "Santo Inácio de Loyola",
+      "imagem": "https://www.a12.com/caminho-para-imagem.jpg",
+      "historia": "Inácio de Loyola nasceu em 1491...",
+      "reflexao": "São Inácio nos ensina a buscar Deus em todas as coisas...",
+      "oracao": "Ó Deus, que pelo ministério..."
+    }
+  ]
+}`}
+				>
+					{#snippet children()}
+						<div class="mt-3">
+							<p class="text-xs text-text-secondary mb-1">Parâmetros de rota:</p>
+							<div class="flex flex-col gap-1">
+								<code class="text-xs font-mono text-primary">dia</code>
+								<span class="text-xs text-text-secondary">Dia do mês (1-31)</span>
+								<code class="text-xs font-mono text-primary">mes</code>
+								<span class="text-xs text-text-secondary">Mês do ano (1-12)</span>
+							</div>
+						</div>
+					{/snippet}
+				</EndpointCard>
+
+				<!-- Observações -->
+				<div class="mt-6 bg-bg-dark-card border border-border-gold/20 rounded-xl p-6 md:p-8">
+					<h3 class="font-serif text-lg font-medium text-text-light mb-4">Observações</h3>
+					<ul class="space-y-2 text-sm text-text-secondary">
+						<li class="flex items-start gap-2">
+							<span class="text-primary mt-1 shrink-0">•</span>
+							O web scraping pode falhar caso o site de origem (A12) altere sua estrutura HTML.
+						</li>
+						<li class="flex items-start gap-2">
+							<span class="text-primary mt-1 shrink-0">•</span>
+							Pode haver variação no tempo de resposta dependendo do carregamento da página de origem.
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- ==================== LITURGIA DIÁRIA ==================== -->
 			<section id="liturgia" class="scroll-mt-24 pb-8">
 				<div class="flex flex-col mb-8">
 					<span class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">API de Terceiros</span>
