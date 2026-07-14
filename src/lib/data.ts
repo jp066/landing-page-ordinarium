@@ -13,12 +13,21 @@ import {
 	HeartHandshake,
 	GraduationCap
 } from '@lucide/svelte';
-import type { NavItem, IndicatorItem, FeatureItem, ModuleItem, AudienceItem, FooterColumn } from './types';
+import type {
+	NavItem,
+	IndicatorItem,
+	FeatureItem,
+	ModuleItem,
+	AudienceItem,
+	FooterColumn
+} from './types';
+import { ARCHDIOCESE_URL } from './constants';
 
 export const navItems: NavItem[] = [
 	{ label: 'Recursos', href: '#recursos' },
 	{ label: 'Para quem', href: '#para-quem' },
 	{ label: 'Sobre o projeto', href: '#sobre' },
+	{ label: 'Parceiros', href: '#parceria' },
 	{ label: 'Contribuir', href: '#contribuir' },
 	{ label: 'Contato', href: '#contato' }
 ];
@@ -171,8 +180,13 @@ export const footerColumns: FooterColumn[] = [
 		title: 'Desenvolvedores',
 		links: [
 			{ label: 'API', href: '/api', target: '_blank', rel: 'noopener noreferrer' },
-			{ label: 'Documentação', href: '/api', target: '_blank', rel: 'noopener noreferrer' },
 			{ label: 'GitHub', href: 'https://github.com/jp066/ordinarium' }
+		]
+	},
+	{
+		title: 'Parceiros',
+		links: [
+			{ label: 'Arquidiocese de Teresina', href: ARCHDIOCESE_URL, target: '_blank', rel: 'noopener noreferrer' }
 		]
 	}
 ];

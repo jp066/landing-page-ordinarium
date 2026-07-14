@@ -28,12 +28,16 @@
 	<div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
 		<!-- Logo -->
 		<a href="/" class="flex items-center gap-2 group">
-			<div class="flex items-center justify-center w-9 h-9 transition-transform group-hover:scale-105">
-				<img src="/assets/favicon.png" alt="Emblema Ordinarium" class="w-8 h-8 object-contain drop-shadow-[0_0_8px_rgba(212,168,79,0.2)]" />
+			<div
+				class="flex items-center justify-center w-9 h-9 transition-transform group-hover:scale-105"
+			>
+				<img
+					src="/assets/favicon.png"
+					alt="Emblema Ordinarium"
+					class="w-8 h-8 object-contain drop-shadow-[0_0_8px_rgba(212,168,79,0.2)]"
+				/>
 			</div>
-			<span class="font-gothic text-2xl font-bold tracking-wide text-primary">
-				Ordinarium
-			</span>
+			<span class="font-gothic text-2xl font-bold tracking-wide text-primary"> Ordinarium </span>
 		</a>
 
 		<!-- Desktop Navigation -->
@@ -41,7 +45,7 @@
 			{#each navItems as item}
 				<a
 					href={item.href}
-					{...(item.target ? { target: item.target, rel: item.rel || 'noopener noreferrer' } : {})}
+					{...item.target ? { target: item.target, rel: item.rel || 'noopener noreferrer' } : {}}
 					class="font-sans text-sm text-text-secondary hover:text-text-light transition-fast relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-primary hover:after:w-full after:transition-all"
 				>
 					{item.label}
@@ -54,9 +58,7 @@
 			<Button href={APP_URL} variant="secondary" class="!px-4 !py-2 text-xs">
 				Abrir aplicativo
 			</Button>
-			<Button href={APP_URL} variant="primary" class="!px-4 !py-2 text-xs">
-				Começar agora
-			</Button>
+			<Button href={APP_URL} variant="primary" class="!px-4 !py-2 text-xs">Começar agora</Button>
 		</div>
 
 		<!-- Mobile Menu Button -->
@@ -85,18 +87,25 @@
 	></div>
 
 	<!-- Drawer -->
-	<div class="fixed top-0 right-0 w-80 h-full bg-bg-dark border-l border-border-gold/30 p-8 z-50 flex flex-col justify-between shadow-2xl lg:hidden animate-fade-in-up">
+	<div
+		class="fixed top-0 right-0 w-80 h-full bg-bg-dark border-l border-border-gold/30 p-8 z-50 flex flex-col justify-between shadow-2xl lg:hidden animate-fade-in-up"
+	>
 		<div class="flex flex-col gap-8">
 			<div class="flex items-center justify-between">
 				<a href="/" class="flex items-center gap-2" onclick={toggleMobileMenu}>
 					<div class="flex items-center justify-center w-8 h-8">
-						<img src="/assets/favicon.png" alt="Emblema Ordinarium" class="w-7 h-7 object-contain" />
+						<img
+							src="/assets/favicon.png"
+							alt="Emblema Ordinarium"
+							class="w-7 h-7 object-contain"
+						/>
 					</div>
-					<span class="font-gothic text-xl font-bold tracking-wide text-primary">
-						Ordinarium
-					</span>
+					<span class="font-gothic text-xl font-bold tracking-wide text-primary"> Ordinarium </span>
 				</a>
-				<button class="text-text-secondary hover:text-text-light transition-fast" onclick={toggleMobileMenu}>
+				<button
+					class="text-text-secondary hover:text-text-light transition-fast"
+					onclick={toggleMobileMenu}
+				>
 					<X class="w-6 h-6" />
 				</button>
 			</div>
@@ -105,7 +114,7 @@
 				{#each navItems as item}
 					<a
 						href={item.href}
-						{...(item.target ? { target: item.target, rel: item.rel || 'noopener noreferrer' } : {})}
+						{...item.target ? { target: item.target, rel: item.rel || 'noopener noreferrer' } : {}}
 						class="font-sans text-base text-text-secondary hover:text-text-light transition-fast py-2 border-b border-white/5"
 						onclick={toggleMobileMenu}
 					>
@@ -116,10 +125,20 @@
 		</div>
 
 		<div class="flex flex-col gap-4 mt-8">
-			<Button href={APP_URL} variant="secondary" class="w-full text-center" onclick={toggleMobileMenu}>
+			<Button
+				href={APP_URL}
+				variant="secondary"
+				class="w-full text-center"
+				onclick={toggleMobileMenu}
+			>
 				Abrir aplicativo
 			</Button>
-			<Button href={APP_URL} variant="primary" class="w-full text-center" onclick={toggleMobileMenu}>
+			<Button
+				href={APP_URL}
+				variant="primary"
+				class="w-full text-center"
+				onclick={toggleMobileMenu}
+			>
 				Começar agora
 			</Button>
 		</div>

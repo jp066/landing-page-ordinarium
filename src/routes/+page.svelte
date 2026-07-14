@@ -3,6 +3,7 @@
 	import Hero from '../components/Hero.svelte';
 	import FeaturesGrid from '../components/FeaturesGrid.svelte';
 	import ScreensShowcase from '../components/ScreensShowcase.svelte';
+	import PartnershipSection from '../components/PartnershipSection.svelte';
 	import AudienceSection from '../components/AudienceSection.svelte';
 	import CTASection from '../components/CTASection.svelte';
 	import Footer from '../components/Footer.svelte';
@@ -39,10 +40,7 @@
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="https://ordinarium.vercel.app" />
-	<meta
-		property="twitter:title"
-		content="Ordinarium em um só lugar"
-	/>
+	<meta property="twitter:title" content="Ordinarium em um só lugar" />
 	<meta
 		property="twitter:description"
 		content="O Ordinarium reúne liturgia diária, horários de missas, diretório de paróquias, orações, exames de consciência e outras ferramentas para acompanhar sua vida espiritual todos os dias."
@@ -88,6 +86,7 @@
 	<Hero />
 	<FeaturesGrid />
 	<ScreensShowcase />
+	<PartnershipSection />
 	<AudienceSection />
 	<CTASection />
 </main>

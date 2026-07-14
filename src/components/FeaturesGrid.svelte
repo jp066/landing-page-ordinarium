@@ -4,7 +4,10 @@
 	import FeatureCard from './FeatureCard.svelte';
 </script>
 
-<section id="recursos" class="w-full py-24 bg-bg-light text-text-dark px-6 md:px-12 border-t border-b border-border-gold/20">
+<section
+	id="recursos"
+	class="w-full py-24 bg-bg-light text-text-dark px-6 md:px-12 border-t border-b border-border-gold/20"
+>
 	<div class="max-w-7xl mx-auto">
 		<!-- Section Header -->
 		<SectionTitle

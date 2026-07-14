@@ -4,7 +4,7 @@
 	import { showcaseModules } from '../lib/data';
 
 	let carouselEl = $state<HTMLDivElement>();
-	
+
 	// Stacked flashcards state
 	let activeIndex = $state(0);
 	let dismissingIndex = $state<number | null>(null);
@@ -52,10 +52,12 @@
 	}
 </script>
 
-<section id="sobre" class="w-full py-24 bg-bg-light text-text-dark px-6 md:px-12 border-b border-border-gold/20 overflow-hidden">
+<section
+	id="sobre"
+	class="w-full py-24 bg-bg-light text-text-dark px-6 md:px-12 border-b border-border-gold/20 overflow-hidden"
+>
 	<div class="max-w-7xl mx-auto">
-		
-		<!-- Section Title -->
+		<!-- prettier-ignore -->
 		<SectionTitle
 			supertitle="Sobre o projeto"
 			title='De uma simples ideia para buscar confissões, nasceu o <span class="font-gothic text-xl font-bold tracking-wide text-primary">Ordinarium</span>'
@@ -64,22 +66,34 @@
 			theme="light"
 		/>
 		<!-- About the Project Info Block -->
-		<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-12 mb-16 pb-16 border-b border-border-gold/20 text-left">
+		<div
+			class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-12 mb-16 pb-16 border-b border-border-gold/20 text-left"
+		>
 			<div class="lg:col-span-7 flex flex-col justify-center">
 				<p class="text-sm text-text-dark/75 leading-relaxed mb-4 font-sans">
-					O que começou com a simples necessidade (e a raiva rsrs) de buscar horários de confissões cresceu e se tornou um companheiro espiritual completo. Hoje, o <span class="font-gothic text-xl font-bold tracking-wide text-primary">Ordinarium</span> é um portal independente e sem fins lucrativos que une liturgia diária, orações tradicionais e o diretório de paróquias para apoiar sua caminhada de fé todos os dias.
+					O que começou com a simples necessidade (e a raiva rsrs) de buscar horários de confissões
+					cresceu e se tornou um companheiro espiritual completo. Hoje, o <span
+						class="font-gothic text-xl font-bold tracking-wide text-primary">Ordinarium</span
+					> é um portal independente e sem fins lucrativos que une liturgia diária, orações tradicionais
+					e o diretório de paróquias para apoiar sua caminhada de fé todos os dias.
 				</p>
 				<p class="text-sm text-text-dark/75 leading-relaxed font-sans">
-					Desenvolvido inteiramente por fiéis voluntários para servir às comunidades, o portal é totalmente gratuito e livre de anúncios. Nosso único propósito é colocar os meios digitais a serviço do anúncio do Evangelho, facilitando a oração e a busca pelos sacramentos na sua região.
+					Desenvolvido inteiramente por fiéis voluntários para servir às comunidades, o portal é
+					totalmente gratuito e livre de anúncios. Nosso único propósito é colocar os meios digitais
+					a serviço do anúncio do Evangelho, facilitando a oração e a busca pelos sacramentos na sua
+					região.
 				</p>
 			</div>
 
-			<div id="benefits" class="lg:col-span-5 flex flex-col items-center lg:items-start select-none">
+			<div
+				id="benefits"
+				class="lg:col-span-5 flex flex-col items-center lg:items-start select-none"
+			>
 				<div class="relative w-full max-w-[340px] h-[220px]">
 					{#each benefits as card, idx}
 						{@const order = (idx - activeIndex + 4) % 4}
 						{@const isDismissed = idx === dismissingIndex}
-						
+
 						<!-- svelte-ignore a11y_click_events_have_key_events -->
 						<!-- svelte-ignore a11y_no_static_element_interactions -->
 						<div
@@ -88,9 +102,9 @@
 							style="
 								z-index: {isDismissed ? 50 : 40 - order};
 								transform: {isDismissed
-									? 'translateX(120%) rotate(8deg)'
-									: `translateY(${order * 10}px) scale(${1 - order * 0.04})`};
-								opacity: {isDismissed ? 0 : (order > 2 ? 0 : 1 - order * 0.2)};
+								? 'translateX(120%) rotate(8deg)'
+								: `translateY(${order * 10}px) scale(${1 - order * 0.04})`};
+								opacity: {isDismissed ? 0 : order > 2 ? 0 : 1 - order * 0.2};
 								pointer-events: {order === 0 && dismissingIndex === null ? 'auto' : 'none'};
 							"
 						>
@@ -108,9 +122,9 @@
 						</div>
 					{/each}
 				</div>
-				
+
 				<!-- Hint below the cards -->
-				<button 
+				<button
 					onclick={nextCard}
 					class="mt-6 text-xs text-primary hover:text-primary-hover font-semibold flex items-center gap-1.5 transition-fast animate-pulse"
 				>
@@ -134,7 +148,6 @@
 
 		<!-- Carousel Container -->
 		<div class="relative mt-4 group">
-			
 			<!-- Navigation Buttons -->
 			<button
 				class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white border border-border-gold/40 text-text-dark flex items-center justify-center shadow-lg hover:bg-primary hover:text-bg-dark hover:border-primary transition-all duration-300 -ml-4 lg:-ml-6 cursor-pointer"
@@ -160,10 +173,13 @@
 				>
 					{#each showcaseModules as module}
 						<!-- Slide Card -->
-						<div class="w-[280px] sm:w-[320px] md:w-[340px] shrink-0 flex flex-col items-center bg-bg-light-card border border-border-gold/30 rounded-2xl p-5 shadow-md hover:shadow-xl hover:border-primary/50 transition-all duration-300 snap-start">
-							
+						<div
+							class="w-[280px] sm:w-[320px] md:w-[340px] shrink-0 flex flex-col items-center bg-bg-light-card border border-border-gold/30 rounded-2xl p-5 shadow-md hover:shadow-xl hover:border-primary/50 transition-all duration-300 snap-start"
+						>
 							<!-- Mockup Image Wrapper (Actual Screenshot) -->
-							<div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-bg-dark border border-border-gold/20 mb-5 relative group/img">
+							<div
+								class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-bg-dark border border-border-gold/20 mb-5 relative group/img"
+							>
 								<img
 									src={module.image}
 									alt={module.name}
@@ -180,13 +196,10 @@
 									{module.description}
 								</p>
 							</div>
-							
 						</div>
 					{/each}
 				</div>
 			</div>
-
 		</div>
-
 	</div>
 </section>
