@@ -139,7 +139,7 @@
 					Voltar para o início
 				</Button>
 				<Button href="https://ordinarium.vercel.app" variant="outline" class="!px-6 !py-3">
-					Abrir aplicativo
+					Conhecer
 				</Button>
 				<Button href={ARCHDIOCESE_URL} variant="outline" class="!px-6 !py-3" target="_blank" rel="noopener noreferrer">
 					Site da Arquidiocese

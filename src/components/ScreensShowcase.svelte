@@ -59,7 +59,7 @@
 	<div class="max-w-7xl mx-auto">
 		<!-- prettier-ignore -->
 		<SectionTitle
-			supertitle="Sobre o projeto"
+			supertitle=""
 			title='De uma simples ideia para buscar confissões, nasceu o <span class="font-gothic text-xl font-bold tracking-wide text-primary">Ordinarium</span>'
 			subtitle='Conheça a história, a missão e a proposta do <span class="font-gothic text-xl font-bold tracking-wide text-primary">Ordinarium</span> para a comunidade católica.'
 			centered={true}
@@ -141,9 +141,6 @@
 			<span class="text-xs font-semibold tracking-widest uppercase text-primary mb-2 block">
 				Feito para <span class="font-bold">você</span>
 			</span>
-			<h3 class="text-xl font-serif font-medium text-text-dark">
-				Uma plataforma moderna e intuitiva
-			</h3>
 		</div>
 
 		<!-- Carousel Container -->

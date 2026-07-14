@@ -24,12 +24,8 @@ import type {
 import { ARCHDIOCESE_URL } from './constants';
 
 export const navItems: NavItem[] = [
-	{ label: 'Recursos', href: '#recursos' },
-	{ label: 'Para quem', href: '#para-quem' },
-	{ label: 'Sobre o projeto', href: '#sobre' },
-	{ label: 'Parceiros', href: '#parceria' },
-	{ label: 'Contribuir', href: '#contribuir' },
-	{ label: 'Contato', href: '#contato' }
+	{ label: 'Paróquias', href: 'https://ordinarium.vercel.app/paroquias', target: '_blank', rel: 'noopener noreferrer' },
+	{ label: 'Horários', href: 'https://ordinarium.vercel.app/horarios', target: '_blank', rel: 'noopener noreferrer' }
 ];
 
 export const indicators: IndicatorItem[] = [
@@ -161,7 +157,7 @@ export const footerColumns: FooterColumn[] = [
 		links: [
 			{ label: 'Recursos', href: '#recursos' },
 			{ label: 'Para quem', href: '#para-quem' },
-			{ label: 'Sobre o projeto', href: '#sobre' },
+			{ label: 'Sobre', href: '#sobre' },
 			{ label: 'Contribuir', href: '#contribuir' },
 			{ label: 'Contato', href: '#contato' }
 		]

@@ -1,15 +1,20 @@
 <script lang="ts">
-	import { Menu, X } from '@lucide/svelte';
+	import { Menu, X, User } from '@lucide/svelte';
 	import { navItems } from '../lib/data';
 	import { APP_URL } from '../lib/constants';
 	import Button from './Button.svelte';
 
 	let isScrolled = $state(true);
+	let isHidden = $state(false);
 	let isMobileMenuOpen = $state(false);
+	let lastScrollY = 0;
 
 	$effect(() => {
 		const handleScroll = () => {
-			isScrolled = window.scrollY > 20;
+			const currentY = window.scrollY;
+			isScrolled = currentY > 20;
+			isHidden = currentY > lastScrollY && currentY > 80 && !isMobileMenuOpen;
+			lastScrollY = currentY;
 		};
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
@@ -17,11 +22,14 @@
 
 	function toggleMobileMenu() {
 		isMobileMenuOpen = !isMobileMenuOpen;
+		if (isMobileMenuOpen) isHidden = false;
 	}
 </script>
 
 <header
-	class="fixed top-0 left-0 w-full z-50 transition-all duration-300 {isScrolled
+	class="fixed top-0 left-0 w-full z-50 transition-all duration-300 {isHidden
+		? '-translate-y-full'
+		: 'translate-y-0'} {isScrolled
 		? 'py-4 bg-bg-dark/85 backdrop-blur-md border-b border-border-gold/30'
 		: 'py-6 bg-bg-dark/60 border-b border-border-gold/10'}"
 >
@@ -55,10 +63,10 @@
 
 		<!-- Desktop Actions -->
 		<div class="hidden lg:flex items-center gap-4">
-			<Button href={APP_URL} variant="secondary" class="!px-4 !py-2 text-xs">
-				Abrir aplicativo
+			<Button href={APP_URL} variant="secondary" class="!px-5 !py-2.5 text-sm">
+				Conhecer
 			</Button>
-			<Button href={APP_URL} variant="primary" class="!px-4 !py-2 text-xs">Começar agora</Button>
+			<Button href={APP_URL} variant="primary" class="!px-5 !py-2.5 text-sm gap-1.5"><User class="w-4 h-4" />Entrar</Button>
 		</div>
 
 		<!-- Mobile Menu Button -->
@@ -131,15 +139,16 @@
 				class="w-full text-center"
 				onclick={toggleMobileMenu}
 			>
-				Abrir aplicativo
+				Conhecer
 			</Button>
 			<Button
 				href={APP_URL}
 				variant="primary"
-				class="w-full text-center"
+				class="w-full text-center gap-1.5"
 				onclick={toggleMobileMenu}
 			>
-				Começar agora
+				<User class="w-4 h-4" />
+				Entrar
 			</Button>
 		</div>
 	</div>
