@@ -3,6 +3,7 @@
 
 	interface Props {
 		variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'white';
+		size?: 'sm' | 'md' | 'lg';
 		href?: string;
 		type?: 'button' | 'submit' | 'reset';
 		class?: string;
@@ -15,6 +16,7 @@
 
 	let {
 		variant = 'primary',
+		size = 'md',
 		href = '',
 		type = 'button',
 		class: className = '',
@@ -26,7 +28,7 @@
 	}: Props = $props();
 
 	const baseStyles =
-		'inline-flex items-center justify-center font-sans font-medium rounded-lg transition-fast focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-bg-dark disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
+		'inline-flex items-center justify-center font-sans font-medium rounded-full transition-fast focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-bg-dark disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
 
 	const variants: Record<'primary' | 'secondary' | 'outline' | 'ghost' | 'white', string> = {
 		primary: 'bg-primary text-bg-dark hover:bg-primary-hover active:scale-[0.98]',
@@ -37,17 +39,21 @@
 		white: 'bg-white text-bg-dark hover:bg-white/90 active:scale-[0.98]'
 	};
 
-	const sizes = 'px-6 py-3 text-sm';
+	const sizes: Record<'sm' | 'md' | 'lg', string> = {
+		sm: 'px-4 py-2 text-xs',
+		md: 'px-6 py-3 text-sm',
+		lg: 'px-8 py-4 text-base'
+	};
 </script>
 
 {#if href}
-	<a {href} class="{baseStyles} {variants[variant]} {sizes} {className}" {target} {rel} {onclick}>
+	<a {href} class="{baseStyles} {variants[variant]} {sizes[size]} {className}" {target} {rel} {onclick}>
 		{#if children}
 			{@render children()}
 		{/if}
 	</a>
 {:else}
-	<button {type} class="{baseStyles} {variants[variant]} {sizes} {className}" {disabled} {onclick}>
+	<button {type} class="{baseStyles} {variants[variant]} {sizes[size]} {className}" {disabled} {onclick}>
 		{#if children}
 			{@render children()}
 		{/if}

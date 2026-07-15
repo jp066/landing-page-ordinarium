@@ -63,8 +63,8 @@
 
 		<!-- Desktop Actions -->
 		<div class="hidden lg:flex items-center gap-4">
-			<Button href={APP_URL} variant="secondary" class="!px-5 !py-2.5 text-sm">Conhecer</Button>
-			<Button href={APP_URL} variant="primary" class="!px-5 !py-2.5 text-sm gap-1.5"
+			<Button href={APP_URL} variant="secondary" size="sm">Conhecer</Button>
+			<Button href={APP_URL} variant="primary" size="sm" class="gap-1.5"
 				><User class="w-4 h-4" />Entrar</Button
 			>
 		</div>

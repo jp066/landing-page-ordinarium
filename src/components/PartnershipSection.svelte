@@ -35,7 +35,7 @@
 				<Button
 					href="/parceria/arquidiocese-de-teresina"
 					variant="primary"
-					class="group !px-6 !py-3 text-sm font-semibold"
+					class="group font-semibold"
 				>
 					Conhecer a parceria
 					<ArrowRight class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

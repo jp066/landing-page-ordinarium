@@ -129,16 +129,16 @@
 				Conheça o Ordinarium e descubra como a tecnologia pode fortalecer sua vida espiritual.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<Button href="/" variant="primary" class="!px-6 !py-3 font-semibold">
+				<Button href="/" variant="primary" size="md" class="font-semibold">
 					Voltar para o início
 				</Button>
-				<Button href="https://ordinarium.vercel.app" variant="outline" class="!px-6 !py-3">
+				<Button href="https://ordinarium.vercel.app" variant="outline" size="md">
 					Conhecer
 				</Button>
 				<Button
 					href={ARCHDIOCESE_URL}
 					variant="outline"
-					class="!px-6 !py-3"
+					size="md"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
