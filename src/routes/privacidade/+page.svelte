@@ -48,15 +48,14 @@
 		<div class="border-t border-border-gold/20 pt-16">
 			<h2 class="text-2xl font-serif font-medium text-text-light mb-6">1. Introdução</h2>
 			<div class="text-text-secondary leading-relaxed space-y-4 max-w-3xl">
-				<p>
-					O Ordinarium valoriza a privacidade e a proteção dos dados de seus usuários.
-				</p>
+				<p>O Ordinarium valoriza a privacidade e a proteção dos dados de seus usuários.</p>
 				<p>
 					Esta Política de Privacidade explica como coletamos, utilizamos, armazenamos e protegemos
 					informações durante o uso da plataforma.
 				</p>
 				<p>
-					Ao utilizar o Ordinarium, você declara estar ciente das práticas descritas neste documento.
+					Ao utilizar o Ordinarium, você declara estar ciente das práticas descritas neste
+					documento.
 				</p>
 			</div>
 		</div>
@@ -193,7 +192,9 @@
 				<!-- Localização -->
 				<div>
 					<h3 class="text-lg font-serif font-medium text-text-light mb-3">Localização</h3>
-					<p class="mb-3">Quando autorizado pelo usuário, podemos utilizar dados de localização para:</p>
+					<p class="mb-3">
+						Quando autorizado pelo usuário, podemos utilizar dados de localização para:
+					</p>
 					<ul class="space-y-2">
 						<li class="flex items-start gap-3">
 							<div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
@@ -266,9 +267,7 @@
 					O Ordinarium pode oferecer funcionalidades relacionadas à espiritualidade e prática
 					religiosa.
 				</p>
-				<p>
-					Informações inseridas voluntariamente pelo usuário em recursos como:
-				</p>
+				<p>Informações inseridas voluntariamente pelo usuário em recursos como:</p>
 				<ul class="space-y-2">
 					<li class="flex items-start gap-3">
 						<div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
@@ -354,9 +353,7 @@
 				8. Dados das paróquias e informações institucionais
 			</h2>
 			<div class="text-text-secondary leading-relaxed space-y-4 max-w-3xl">
-				<p>
-					Informações públicas relacionadas a:
-				</p>
+				<p>Informações públicas relacionadas a:</p>
 				<ul class="space-y-2">
 					<li class="flex items-start gap-3">
 						<div class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
@@ -386,9 +383,7 @@
 	<!-- 9. Segurança dos dados -->
 	<section class="max-w-4xl mx-auto px-6 md:px-12 pb-16">
 		<div class="border-t border-border-gold/20 pt-16">
-			<h2 class="text-2xl font-serif font-medium text-text-light mb-6">
-				9. Segurança dos dados
-			</h2>
+			<h2 class="text-2xl font-serif font-medium text-text-light mb-6">9. Segurança dos dados</h2>
 			<div class="text-text-secondary leading-relaxed space-y-4 max-w-3xl">
 				<p>
 					Adotamos medidas técnicas e administrativas para proteger as informações dos usuários
@@ -423,9 +418,7 @@
 	<!-- 10. Direitos do usuário -->
 	<section class="max-w-4xl mx-auto px-6 md:px-12 pb-16">
 		<div class="border-t border-border-gold/20 pt-16">
-			<h2 class="text-2xl font-serif font-medium text-text-light mb-6">
-				10. Direitos do usuário
-			</h2>
+			<h2 class="text-2xl font-serif font-medium text-text-light mb-6">10. Direitos do usuário</h2>
 			<div class="text-text-secondary leading-relaxed space-y-4 max-w-3xl">
 				<p>
 					De acordo com a legislação aplicável, especialmente a Lei Geral de Proteção de Dados
@@ -460,13 +453,9 @@
 	<!-- 11. Exclusão da conta -->
 	<section class="max-w-4xl mx-auto px-6 md:px-12 pb-16">
 		<div class="border-t border-border-gold/20 pt-16">
-			<h2 class="text-2xl font-serif font-medium text-text-light mb-6">
-				11. Exclusão da conta
-			</h2>
+			<h2 class="text-2xl font-serif font-medium text-text-light mb-6">11. Exclusão da conta</h2>
 			<div class="text-text-secondary leading-relaxed space-y-4 max-w-3xl">
-				<p>
-					O usuário poderá solicitar a exclusão da sua conta e dos dados associados.
-				</p>
+				<p>O usuário poderá solicitar a exclusão da sua conta e dos dados associados.</p>
 				<p>
 					Após a solicitação, os dados serão removidos ou anonimizados conforme as obrigações legais
 					aplicáveis.
@@ -486,9 +475,7 @@
 					Esta Política de Privacidade poderá ser atualizada para refletir melhorias na plataforma
 					ou mudanças legais.
 				</p>
-				<p>
-					Recomendamos que os usuários revisem este documento periodicamente.
-				</p>
+				<p>Recomendamos que os usuários revisem este documento periodicamente.</p>
 			</div>
 		</div>
 	</section>

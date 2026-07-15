@@ -30,8 +30,7 @@
 
 	const variants: Record<'primary' | 'secondary' | 'outline' | 'ghost' | 'white', string> = {
 		primary: 'bg-primary text-bg-dark hover:bg-primary-hover active:scale-[0.98]',
-		secondary:
-			'text-text-light hover:bg-white/15 active:scale-[0.98]',
+		secondary: 'text-text-light hover:bg-white/15 active:scale-[0.98]',
 		outline:
 			'border border-border-gold text-text-light hover:bg-primary/10 hover:border-primary active:scale-[0.98]',
 		ghost: 'text-text-secondary hover:text-text-light hover:bg-white/5',

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { footerColumns } from '../lib/data';
-	import { GITHUB_URL, INSTAGRAM_URL, EMAIL_CONTACT } from '../lib/constants';
+	import { GITHUB_URL, INSTAGRAM_URL, EMAIL_CONTACT, ARCHDIOCESE_URL } from '../lib/constants';
 </script>
 
 <footer
@@ -26,7 +26,7 @@
 				</a>
 
 				<p class="text-xs md:text-sm text-text-secondary leading-relaxed mb-6 max-w-sm">
-					Ferramentas digitais para conectar você à vida litúrgica e à missão da Igreja Católica.
+					Um projeto dedicado a facilitar a vida de oração dos católicos brasileiros.
 				</p>
 
 				<!-- Social Links -->
@@ -111,6 +111,39 @@
 						</nav>
 					</div>
 				{/each}
+			</div>
+		</div>
+
+		<!-- Partner logos strip -->
+		<div class="flex flex-wrap justify-center gap-8 items-center py-8 border-b border-white/5">
+			<span class="text-xs text-text-secondary">Parceiros e Apoiadores</span>
+			<div class="flex items-center gap-8">
+				<a
+					href={ARCHDIOCESE_URL}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="flex items-center gap-2 opacity-50 hover:opacity-100 transition-opacity duration-200"
+				>
+					<img
+						src="/assets/brasao-arquidiocese.png"
+						alt="Arquidiocese de Teresina"
+						class="w-6 h-6 object-contain"
+					/>
+					<span class="text-xs text-text-secondary">Arquidiocese de Teresina</span>
+				</a>
+				<a
+					href="https://www.instagram.com/dompodcast/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="flex items-center gap-2 opacity-50 hover:opacity-100 transition-opacity duration-200"
+				>
+					<img
+						src="/assets/dom-podcast.png"
+						alt="Dom Podcast"
+						class="w-6 h-6 object-contain"
+					/>
+					<span class="text-xs text-text-secondary">Dom Podcast</span>
+				</a>
 			</div>
 		</div>
 

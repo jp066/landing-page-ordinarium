@@ -1,11 +1,12 @@
 <script lang="ts">
 	import Navbar from '../components/Navbar.svelte';
 	import Hero from '../components/Hero.svelte';
-	import FeaturesGrid from '../components/FeaturesGrid.svelte';
 	import ScreensShowcase from '../components/ScreensShowcase.svelte';
+	import FeatureShowcase from '../components/FeatureShowcase.svelte';
 	import PartnershipSection from '../components/PartnershipSection.svelte';
-	import AudienceSection from '../components/AudienceSection.svelte';
-	import CTASection from '../components/CTASection.svelte';
+	import FAQSection from '../components/FAQSection.svelte';
+	import TestimonialsSection from '../components/TestimonialsSection.svelte';
+	import DownloadSection from '../components/DownloadSection.svelte';
 	import Footer from '../components/Footer.svelte';
 </script>
 
@@ -84,10 +85,22 @@
 <Navbar />
 <main>
 	<Hero />
-	<FeaturesGrid />
 	<ScreensShowcase />
+	<FeatureShowcase />
+
+	<!-- Breathing moment -->
+	<section class="w-full py-32 bg-bg-light px-6 md:px-12">
+		<div class="max-w-3xl mx-auto text-center">
+			<p class="text-2xl md:text-3xl font-serif italic leading-relaxed text-text-dark/80">
+				"Orai sem cessar."
+			</p>
+			<p class="mt-6 text-sm text-text-dark/40 font-sans">— 1 Tessalonicenses 5:17</p>
+		</div>
+	</section>
+
+	<FAQSection />
+	<TestimonialsSection />
 	<PartnershipSection />
-	<AudienceSection />
-	<CTASection />
+	<DownloadSection />
 </main>
 <Footer />

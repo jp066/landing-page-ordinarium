@@ -20,10 +20,7 @@
 		property="og:url"
 		content="https://ordinarium.vercel.app/parceria/arquidiocese-de-teresina"
 	/>
-	<meta
-		property="og:title"
-		content="Ordinarium × Arquidiocese de Teresina"
-	/>
+	<meta property="og:title" content="Ordinarium × Arquidiocese de Teresina" />
 	<meta
 		property="og:description"
 		content="Conheça a parceria entre o Ordinarium e a Arquidiocese de Teresina."
@@ -46,7 +43,6 @@
 	<!-- Hero Section -->
 	<section class="max-w-4xl mx-auto px-6 md:px-12 pb-20">
 		<div class="flex flex-col items-center text-center">
-
 			<!-- Title -->
 			<h1
 				class="text-4xl md:text-5xl lg:text-6xl font-gothic font-medium leading-tight text-primary mb-6"
@@ -59,26 +55,24 @@
 				Uma parceria que une tecnologia e missão pastoral para aproximar os fiéis da vida da Igreja.
 			</p>
 
-		<!-- Coat of Arms -->
-		<div class="relative">
-			<div
-				class="absolute inset-0 bg-primary/5 rounded-full blur-[60px] pointer-events-none"
-			></div>
-			<div
-				class="relative flex items-center justify-center gap-4 md:gap-6"
-			>
-				<img
-					src="/assets/logo.png"
-					alt="Logo Ordinarium"
-					class="w-20 h-20 md:w-64 md:h-64 object-contain drop-shadow-[0_0_8px_rgba(212,168,79,0.2)]"
-				/>
-				<img
-					src="/assets/brasao-arquidiocese.png"
-					alt="Brasão da Arquidiocese de Teresina"
-					class="w-24 h-24 md:w-52 md:h-52 object-contain"
-				/>
+			<!-- Coat of Arms -->
+			<div class="relative">
+				<div
+					class="absolute inset-0 bg-primary/5 rounded-full blur-[60px] pointer-events-none"
+				></div>
+				<div class="relative flex items-center justify-center gap-4 md:gap-6">
+					<img
+						src="/assets/logo.png"
+						alt="Logo Ordinarium"
+						class="w-20 h-20 md:w-64 md:h-64 object-contain drop-shadow-[0_0_8px_rgba(212,168,79,0.2)]"
+					/>
+					<img
+						src="/assets/brasao-arquidiocese.png"
+						alt="Brasão da Arquidiocese de Teresina"
+						class="w-24 h-24 md:w-52 md:h-52 object-contain"
+					/>
+				</div>
 			</div>
-		</div>
 		</div>
 	</section>
 
@@ -141,7 +135,13 @@
 				<Button href="https://ordinarium.vercel.app" variant="outline" class="!px-6 !py-3">
 					Conhecer
 				</Button>
-				<Button href={ARCHDIOCESE_URL} variant="outline" class="!px-6 !py-3" target="_blank" rel="noopener noreferrer">
+				<Button
+					href={ARCHDIOCESE_URL}
+					variant="outline"
+					class="!px-6 !py-3"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
 					Site da Arquidiocese
 				</Button>
 			</div>

@@ -37,9 +37,7 @@
 
 	<!-- Hero -->
 	<section class="max-w-4xl mx-auto px-6 md:px-12 pb-16">
-		<h1 class="text-4xl md:text-5xl font-serif font-medium text-text-light mb-4">
-			Termos de Uso
-		</h1>
+		<h1 class="text-4xl md:text-5xl font-serif font-medium text-text-light mb-4">Termos de Uso</h1>
 		<p class="text-text-secondary">Última atualização: 13 de julho de 2026</p>
 	</section>
 
@@ -189,9 +187,7 @@
 	<!-- 5. Conteúdos Religiosos -->
 	<section class="max-w-4xl mx-auto px-6 md:px-12 pb-16">
 		<div class="border-t border-border-gold/20 pt-16">
-			<h2 class="text-2xl font-serif font-medium text-text-light mb-6">
-				5. Conteúdos Religiosos
-			</h2>
+			<h2 class="text-2xl font-serif font-medium text-text-light mb-6">5. Conteúdos Religiosos</h2>
 			<div class="text-text-secondary leading-relaxed space-y-4 max-w-3xl">
 				<p>
 					Os conteúdos disponibilizados pelo Ordinarium têm como objetivo auxiliar a formação e a
@@ -213,8 +209,8 @@
 					</li>
 				</ul>
 				<p>
-					Questões pessoais, pastorais ou sacramentais devem ser tratadas com a devida orientação
-					da Igreja.
+					Questões pessoais, pastorais ou sacramentais devem ser tratadas com a devida orientação da
+					Igreja.
 				</p>
 			</div>
 		</div>
@@ -250,9 +246,7 @@
 				7. Inteligência Artificial
 			</h2>
 			<div class="text-text-secondary leading-relaxed space-y-4 max-w-3xl">
-				<p>
-					O Ordinarium pode disponibilizar funcionalidades utilizando inteligência artificial.
-				</p>
+				<p>O Ordinarium pode disponibilizar funcionalidades utilizando inteligência artificial.</p>
 				<p>
 					Esses recursos têm como objetivo auxiliar o usuário através de informações, organização e
 					reflexão pessoal.
@@ -292,9 +286,7 @@
 					O Ordinarium poderá estabelecer parcerias com instituições religiosas, dioceses, paróquias
 					e outros organismos ligados à Igreja Católica.
 				</p>
-				<p>
-					Essas parcerias têm como objetivo fortalecer a missão evangelizadora da plataforma.
-				</p>
+				<p>Essas parcerias têm como objetivo fortalecer a missão evangelizadora da plataforma.</p>
 				<p>
 					A presença institucional de uma entidade parceira não significa acesso aos dados pessoais
 					dos usuários, salvo quando autorizado ou permitido pela legislação aplicável.
@@ -353,9 +345,7 @@
 				10. Disponibilidade do Serviço
 			</h2>
 			<div class="text-text-secondary leading-relaxed space-y-4 max-w-3xl">
-				<p>
-					O Ordinarium busca manter a plataforma disponível e funcionando corretamente.
-				</p>
+				<p>O Ordinarium busca manter a plataforma disponível e funcionando corretamente.</p>
 				<p>Entretanto, podem ocorrer:</p>
 				<ul class="space-y-2">
 					<li class="flex items-start gap-3">
@@ -394,9 +384,7 @@
 					O usuário poderá solicitar o encerramento de sua conta conforme os procedimentos
 					disponibilizados pela plataforma.
 				</p>
-				<p>
-					O Ordinarium poderá restringir ou suspender contas que violem estes Termos de Uso.
-				</p>
+				<p>O Ordinarium poderá restringir ou suspender contas que violem estes Termos de Uso.</p>
 			</div>
 		</div>
 	</section>
@@ -422,9 +410,7 @@
 	<!-- 13. Legislação Aplicável -->
 	<section class="max-w-4xl mx-auto px-6 md:px-12 pb-16">
 		<div class="border-t border-border-gold/20 pt-16">
-			<h2 class="text-2xl font-serif font-medium text-text-light mb-6">
-				13. Legislação Aplicável
-			</h2>
+			<h2 class="text-2xl font-serif font-medium text-text-light mb-6">13. Legislação Aplicável</h2>
 			<div class="text-text-secondary leading-relaxed space-y-4 max-w-3xl">
 				<p>
 					Estes Termos de Uso são regidos pelas leis aplicáveis da República Federativa do Brasil,

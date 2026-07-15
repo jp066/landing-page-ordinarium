@@ -1,39 +1,31 @@
-import {
-	BookOpen,
-	MapPin,
-	Clock,
-	Sparkles,
-	Shield,
-	Heart,
-	Star,
-	Users,
-	Flame,
-	Check,
-	HelpCircle,
-	HeartHandshake,
-	GraduationCap
-} from '@lucide/svelte';
+import { BookMarked, Church, Clock, Sparkles, Shield, Heart, Users } from '@lucide/svelte';
 import type {
 	NavItem,
 	IndicatorItem,
 	FeatureItem,
-	ModuleItem,
-	AudienceItem,
+	TestimonialItem,
+	FAQItem,
 	FooterColumn
 } from './types';
-import { ARCHDIOCESE_URL } from './constants';
+import { ARCHDIOCESE_URL, APP_URL } from './constants';
 
 export const navItems: NavItem[] = [
-	{ label: 'Paróquias', href: 'https://ordinarium.vercel.app/paroquias', target: '_blank', rel: 'noopener noreferrer' },
-	{ label: 'Horários', href: 'https://ordinarium.vercel.app/horarios', target: '_blank', rel: 'noopener noreferrer' }
+	{
+		label: 'Paróquias',
+		href: 'https://ordinarium.vercel.app/paroquias',
+		target: '_blank',
+		rel: 'noopener noreferrer'
+	},
+	{
+		label: 'Horários',
+		href: 'https://ordinarium.vercel.app/horarios',
+		target: '_blank',
+		rel: 'noopener noreferrer'
+	},
+	{ label: 'Leo', href: `${APP_URL}/leo`, target: '_blank', rel: 'noopener noreferrer' }
 ];
 
 export const indicators: IndicatorItem[] = [
-	{
-		icon: Heart,
-		title: '100% gratuito',
-		subtitle: 'Para todos os fiéis'
-	},
 	{
 		icon: Users,
 		title: 'Colaborativo',
@@ -53,13 +45,14 @@ export const indicators: IndicatorItem[] = [
 
 export const features: FeatureItem[] = [
 	{
-		icon: BookOpen,
+		icon: BookMarked,
 		title: 'Liturgia Diária',
-		description: 'Acompanhe as leituras, orações e celebrações do dia.',
+		description:
+			'Acompanhe as leituras, orações e celebrações do dia, segundo o calendário litúrgico.',
 		href: '#recursos'
 	},
 	{
-		icon: MapPin,
+		icon: Church,
 		title: 'Paróquias',
 		description: 'Encontre paróquias perto de você com contatos, horários e mapas.',
 		href: '#recursos'
@@ -67,25 +60,14 @@ export const features: FeatureItem[] = [
 	{
 		icon: Clock,
 		title: 'Horários',
-		description: 'Missas, confissões e adorações atualizadas na sua região.',
+		description:
+			'Missas, confissões e adorações conforme informações enviadas pelas paróquias na sua região.',
 		href: '#recursos'
 	},
 	{
-		icon: Flame,
+		icon: Heart,
 		title: 'Orações',
-		description: 'Orações tradicionais, devocionais e momentos de espiritualidade.',
-		href: '#recursos'
-	},
-	{
-		icon: HelpCircle,
-		title: 'Exame de Consciência',
-		description: 'Prepare-se para uma boa confissão com um passo a passo guiado.',
-		href: '#recursos'
-	},
-	{
-		icon: Star,
-		title: 'Favoritos',
-		description: 'Salve suas paróquias, orações e conteúdos favoritos.',
+		description: 'Orações tradicionais e momentos de espiritualidade.',
 		href: '#recursos'
 	}
 ];
@@ -123,31 +105,51 @@ export const showcaseModules = [
 	}
 ];
 
-export const audiences: AudienceItem[] = [
+export const testimonials: TestimonialItem[] = [
 	{
-		icon: Heart,
-		title: 'Fiéis',
-		description: 'Acompanhe sua vida espiritual no dia a dia.'
+		quote:
+			'O Ordinarium mudou minha rotina de oração. Antes eu buscava liturgia em vários apps, agora está tudo em um só lugar.',
+		name: 'Mariana S.',
+		context: 'Paroquiana em São Paulo'
 	},
 	{
-		icon: GraduationCap,
-		title: 'Catequistas',
-		description: 'Recursos para apoiar sua missão de evangelizar.'
+		quote:
+			'Como catequista, preciso de fontes confiáveis e organizadas. O Ordinarium me ajuda a preparar as aulas com as leituras do dia.',
+		name: 'Carlos H.',
+		context: 'Catequista em Teresina'
+	}
+];
+
+export const faqItems: FAQItem[] = [
+	{
+		question: 'O que é o Ordinarium?',
+		answer:
+			'O Ordinarium é um aplicativo católico que reúne liturgia diária, horários de missas, diretório de paróquias, orações e exames de consciência — tudo em um só lugar para acompanhar sua vida espiritual todos os dias.'
 	},
 	{
-		icon: Flame,
-		title: 'Sacerdotes',
-		description: 'Ferramentas práticas para o ministério.'
+		question: 'É gratuito?',
+		answer:
+			'Sim, o Ordinarium é um projeto independente e sem anúncios. Você pode usar todas as funcionalidades básicas gratuitamente. Algumas ferramentas avançadas poderão ter acesso em breve.'
 	},
 	{
-		icon: HeartHandshake,
-		title: 'Paróquias',
-		description: 'Divulgue horários e informações da sua comunidade.'
+		question: 'Como encontrar minha paróquia?',
+		answer:
+			'No app, acesse a seção "Paróquias" e permita o acesso à sua localização. O Ordinarium mostra as paróquias mais próximas com contatos, horários e mapas integrados.'
 	},
 	{
-		icon: Users,
-		title: 'Comunidades',
-		description: 'Organize grupos e compartilhe conteúdos edificantes.'
+		question: 'Posso usar offline?',
+		answer:
+			'Parte do conteúdo, como orações e liturgia do dia, pode ser acessado offline após o primeiro carregamento. Funcionalidades como mapas de paróquias precisam de conexão com a internet.'
+	},
+	{
+		question: 'Como contribuir com o projeto?',
+		answer:
+			'O Ordinarium é mantido pela generosidade da comunidade. Você pode contribuir financeiramente ou ajudar com código-fonte no GitHub. Acesse a seção "Contribuir" para mais informações.'
+	},
+	{
+		question: 'Quem está por trás do Ordinarium?',
+		answer:
+			'O Ordinarium é um projeto colaborativo feito por católicos, em parceria com a Arquidiocese de Teresina e outros apoiadores. Nosso objetivo é facilitar a vida de oração dos fiéis no Brasil.'
 	}
 ];
 
@@ -156,9 +158,8 @@ export const footerColumns: FooterColumn[] = [
 		title: 'Navegação',
 		links: [
 			{ label: 'Recursos', href: '#recursos' },
-			{ label: 'Para quem', href: '#para-quem' },
 			{ label: 'Sobre', href: '#sobre' },
-			{ label: 'Contribuir', href: '#contribuir' },
+			{ label: 'Parceria', href: '#parceria' },
 			{ label: 'Contato', href: '#contato' }
 		]
 	},
@@ -168,8 +169,7 @@ export const footerColumns: FooterColumn[] = [
 			{ label: 'Horários', href: '#recursos' },
 			{ label: 'Paróquias', href: '#recursos' },
 			{ label: 'Liturgia', href: '#recursos' },
-			{ label: 'Orações', href: '#recursos' },
-			{ label: 'Exame de Consciência', href: '#recursos' }
+			{ label: 'Orações', href: '#recursos' }
 		]
 	},
 	{
@@ -179,10 +179,4 @@ export const footerColumns: FooterColumn[] = [
 			{ label: 'GitHub', href: 'https://github.com/jp066/ordinarium' }
 		]
 	},
-	{
-		title: 'Parceiros',
-		links: [
-			{ label: 'Arquidiocese de Teresina', href: ARCHDIOCESE_URL, target: '_blank', rel: 'noopener noreferrer' }
-		]
-	}
 ];

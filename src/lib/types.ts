@@ -26,10 +26,15 @@ export interface ModuleItem {
 	description: string;
 }
 
-export interface AudienceItem {
-	icon: Component;
-	title: string;
-	description: string;
+export interface TestimonialItem {
+	quote: string;
+	name: string;
+	context: string;
+}
+
+export interface FAQItem {
+	question: string;
+	answer: string;
 }
 
 export interface FooterLink {
