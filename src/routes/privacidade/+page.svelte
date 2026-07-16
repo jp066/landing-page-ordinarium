@@ -10,17 +10,17 @@
 		content="Conheça como o Ordinarium coleta, utiliza, armazena e protege suas informações durante o uso da plataforma."
 	/>
 	<meta name="robots" content="index, follow" />
-	<link rel="canonical" href="https://ordinarium.vercel.app/privacidade" />
+	<link rel="canonical" href="https://ordinarium-zeta.vercel.app/privacidade" />
 
 	<!-- Open Graph -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://ordinarium.vercel.app/privacidade" />
+	<meta property="og:url" content="https://ordinarium-zeta.vercel.app/privacidade" />
 	<meta property="og:title" content="Política de Privacidade — Ordinarium" />
 	<meta
 		property="og:description"
 		content="Conheça como o Ordinarium coleta, utiliza, armazena e protege suas informações durante o uso da plataforma."
 	/>
-	<meta property="og:image" content="https://ordinarium.vercel.app/assets/image.png" />
+	<meta property="og:image" content="https://ordinarium-zeta.vercel.app/assets/image.png" />
 </svelte:head>
 
 <main class="min-h-screen bg-bg-dark text-text-light">

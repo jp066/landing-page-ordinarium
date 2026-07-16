@@ -18,17 +18,17 @@
 		content="O Ordinarium reúne liturgia diária, horários de missas, diretório de paróquias, orações, exames de consciência e outras ferramentas para acompanhar sua vida espiritual todos os dias."
 	/>
 	<meta name="robots" content="index, follow" />
-	<link rel="canonical" href="https://ordinarium.vercel.app" />
+	<link rel="canonical" href="https://ordinarium-zeta.vercel.app" />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://ordinarium.vercel.app" />
+	<meta property="og:url" content="https://ordinarium-zeta.vercel.app" />
 	<meta property="og:title" content="Ordinarium em um só lugar" />
 	<meta
 		property="og:description"
 		content="O Ordinarium reúne liturgia diária, horários de missas, diretório de paróquias, orações, exames de consciência e outras ferramentas para acompanhar sua vida espiritual todos os dias."
 	/>
-	<meta property="og:image" content="https://ordinarium.vercel.app/assets/image.png" />
+	<meta property="og:image" content="https://ordinarium-zeta.vercel.app/assets/image.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta property="og:image:alt" content="Ordinarium" />
@@ -37,13 +37,13 @@
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="https://ordinarium.vercel.app" />
+	<meta property="twitter:url" content="https://ordinarium-zeta.vercel.app" />
 	<meta property="twitter:title" content="Ordinarium em um só lugar" />
 	<meta
 		property="twitter:description"
 		content="O Ordinarium reúne liturgia diária, horários de missas, diretório de paróquias, orações, exames de consciência e outras ferramentas para acompanhar sua vida espiritual todos os dias."
 	/>
-	<meta property="twitter:image" content="https://ordinarium.vercel.app/assets/image.png" />
+	<meta property="twitter:image" content="https://ordinarium-zeta.vercel.app/assets/image.png" />
 
 	<!-- Structured Data (JSON-LD) -->
 	<script type="application/ld+json">
@@ -52,15 +52,15 @@
 			"@graph": [
 				{
 					"@type": "WebSite",
-					"@id": "https://ordinarium.vercel.app/#website",
-					"url": "https://ordinarium.vercel.app",
+					"@id": "https://ordinarium-zeta.vercel.app/#website",
+					"url": "https://ordinarium-zeta.vercel.app",
 					"name": "Ordinarium",
 					"description": "O Ordinarium reúne liturgia diária, horários de missas, diretório de paróquias, orações, exames de consciência e outras ferramentas para acompanhar sua vida espiritual todos os dias.",
 					"inLanguage": "pt-BR"
 				},
 				{
 					"@type": "SoftwareApplication",
-					"@id": "https://ordinarium.vercel.app/#software",
+					"@id": "https://ordinarium-zeta.vercel.app/#software",
 					"name": "Ordinarium",
 					"operatingSystem": "All",
 					"applicationCategory": "LifestyleApplication",
@@ -70,8 +70,8 @@
 						"priceCurrency": "BRL"
 					},
 					"description": "O Ordinarium reúne liturgia diária, horários de missas, diretório de paróquias, orações, exames de consciência e outras ferramentas para acompanhar sua vida espiritual todos os dias.",
-					"url": "https://ordinarium.vercel.app",
-					"image": "https://ordinarium.vercel.app/assets/image.png",
+					"url": "https://ordinarium-zeta.vercel.app",
+					"image": "https://ordinarium-zeta.vercel.app/assets/image.png",
 					"applicationSubCategory": "Religioso, Devoção, Organização Litúrgica",
 					"author": {
 						"@type": "Person",
@@ -86,9 +86,9 @@
 				},
 				{
 					"@type": "FAQPage",
-					"@id": "https://ordinarium.vercel.app/#faq",
+					"@id": "https://ordinarium-zeta.vercel.app/#faq",
 					"isPartOf": {
-						"@id": "https://ordinarium.vercel.app/#website"
+						"@id": "https://ordinarium-zeta.vercel.app/#website"
 					},
 					"inLanguage": "pt-BR",
 					"mainEntity": [

@@ -249,17 +249,17 @@
 		name="description"
 		content="Acompanhe o planejamento de novidades do Ordinarium. Vote nas funcionalidades mais desejadas e envie suas próprias sugestões."
 	/>
-	<link rel="canonical" href="https://ordinarium.vercel.app/roadmap" />
+	<link rel="canonical" href="https://ordinarium-zeta.vercel.app/roadmap" />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://ordinarium.vercel.app/roadmap" />
+	<meta property="og:url" content="https://ordinarium-zeta.vercel.app/roadmap" />
 	<meta property="og:title" content="Roadmap de Funcionalidades — Ordinarium" />
 	<meta
 		property="og:description"
 		content="Acompanhe o planejamento de novidades do Ordinarium. Vote nas funcionalidades mais desejadas e envie suas próprias sugestões."
 	/>
-	<meta property="og:image" content="https://ordinarium.vercel.app/assets/image.png" />
+	<meta property="og:image" content="https://ordinarium-zeta.vercel.app/assets/image.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta property="og:image:alt" content="Roadmap Ordinarium" />
@@ -268,13 +268,13 @@
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="https://ordinarium.vercel.app/roadmap" />
+	<meta property="twitter:url" content="https://ordinarium-zeta.vercel.app/roadmap" />
 	<meta property="twitter:title" content="Roadmap de Funcionalidades — Ordinarium" />
 	<meta
 		property="twitter:description"
 		content="Acompanhe o planejamento de novidades do Ordinarium. Vote nas funcionalidades mais desejadas e envie suas próprias sugestões."
 	/>
-	<meta property="twitter:image" content="https://ordinarium.vercel.app/assets/image.png" />
+	<meta property="twitter:image" content="https://ordinarium-zeta.vercel.app/assets/image.png" />
 </svelte:head>
 
 <Navbar />
