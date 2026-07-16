@@ -132,9 +132,7 @@
 				<Button href="/" variant="primary" size="md" class="font-semibold">
 					Voltar para o início
 				</Button>
-				<Button href="https://ordinarium.vercel.app" variant="outline" size="md">
-					Conhecer
-				</Button>
+				<Button href="https://ordinarium.vercel.app" variant="outline" size="md">Conhecer</Button>
 				<Button
 					href={ARCHDIOCESE_URL}
 					variant="outline"

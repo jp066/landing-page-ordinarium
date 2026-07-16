@@ -56,7 +56,7 @@
 				<!-- CTA -->
 				<div class="flex flex-col sm:flex-row gap-3">
 					<Button href={APP_URL} variant="white" size="lg" class="group font-semibold">
-						 Experimente o &nbsp; <span class="font-gothic">Ordinarium</span>
+						Experimente o &nbsp; <span class="font-gothic">Ordinarium</span>
 					</Button>
 				</div>
 			</div>

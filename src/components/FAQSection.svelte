@@ -10,14 +10,9 @@
 	}
 </script>
 
-<section id="faq" 	class="w-full py-20 bg-bg-light px-6 md:px-12">
+<section id="faq" class="w-full py-20 bg-bg-light px-6 md:px-12">
 	<div class="max-w-3xl mx-auto">
-		<SectionTitle
-			supertitle=""
-			title="Perguntas frequentes"
-			centered={false}
-			theme="light"
-		/>
+		<SectionTitle supertitle="" title="Perguntas frequentes" centered={false} theme="light" />
 
 		<div class="mt-12">
 			{#each faqItems as item, index}

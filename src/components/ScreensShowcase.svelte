@@ -5,25 +5,29 @@
 	const features = [
 		{
 			title: 'Liturgia Diária',
-			description: 'Acompanhe as leituras, salmos e orações litúrgicas de cada dia de forma prática e limpa.',
+			description:
+				'Acompanhe as leituras, salmos e orações litúrgicas de cada dia de forma prática e limpa.',
 			image: '/assets/liturgia.png',
 			alt: 'Tela de Liturgia Diária'
 		},
 		{
 			title: 'Paróquias e Horários',
-			description: 'Encontre horários de missas, confissões e adorações das comunidades mais próximas de você.',
+			description:
+				'Encontre horários de missas, confissões e adorações das comunidades mais próximas de você.',
 			image: '/assets/paroquias.png',
 			alt: 'Tela de Paróquias'
 		},
 		{
 			title: 'Orações e Novenas',
-			description: 'Acesse um rico acervo de orações tradicionais e novenas para nutrir seu hábito diário de orar.',
+			description:
+				'Acesse um rico acervo de orações tradicionais e novenas para nutrir seu hábito diário de orar.',
 			image: '/assets/oracoes.png',
 			alt: 'Tela de Orações'
 		},
 		{
 			title: 'Roteiros de Confissão',
-			description: 'Prepare-se bem para o sacramento da Reconciliação com um exame de consciência passo a passo.',
+			description:
+				'Prepare-se bem para o sacramento da Reconciliação com um exame de consciência passo a passo.',
 			image: '/assets/exame.png',
 			alt: 'Tela de Exame de Consciência'
 		}

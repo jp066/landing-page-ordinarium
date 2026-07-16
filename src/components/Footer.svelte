@@ -137,11 +137,7 @@
 					rel="noopener noreferrer"
 					class="flex items-center gap-2 opacity-50 hover:opacity-100 transition-opacity duration-200"
 				>
-					<img
-						src="/assets/dom-podcast.png"
-						alt="Dom Podcast"
-						class="w-6 h-6 object-contain"
-					/>
+					<img src="/assets/dom-podcast.png" alt="Dom Podcast" class="w-6 h-6 object-contain" />
 					<span class="text-xs text-text-secondary">Dom Podcast</span>
 				</a>
 			</div>

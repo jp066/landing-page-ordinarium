@@ -3,14 +3,9 @@
 	import SectionTitle from './SectionTitle.svelte';
 </script>
 
-<section id="depoimentos" 	class="w-full py-24 bg-bg-light px-6 md:px-12">
+<section id="depoimentos" class="w-full py-24 bg-bg-light px-6 md:px-12">
 	<div class="max-w-5xl mx-auto">
-		<SectionTitle
-			supertitle=""
-			title="O que dizem os fiéis"
-			centered={false}
-			theme="light"
-		/>
+		<SectionTitle supertitle="" title="O que dizem os fiéis" centered={false} theme="light" />
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
 			{#each testimonials as item (item.name)}

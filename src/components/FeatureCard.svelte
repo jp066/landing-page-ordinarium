@@ -21,7 +21,8 @@
 		</div>
 		<div>
 			<h3
-				class="text-base font-serif font-semibold mb-1 group-hover:text-primary transition-colors duration-200 {theme === 'light'
+				class="text-base font-serif font-semibold mb-1 group-hover:text-primary transition-colors duration-200 {theme ===
+				'light'
 					? 'text-text-dark'
 					: 'text-text-light'}"
 			>

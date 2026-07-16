@@ -8,7 +8,6 @@ import type {
 	FooterColumn
 } from './types';
 import { ARCHDIOCESE_URL, APP_URL } from './constants';
-
 export const navItems: NavItem[] = [
 	{
 		label: 'Paróquias',
@@ -22,7 +21,8 @@ export const navItems: NavItem[] = [
 		target: '_blank',
 		rel: 'noopener noreferrer'
 	},
-	{ label: 'Leo', href: `${APP_URL}/leo`, target: '_blank', rel: 'noopener noreferrer' }
+	{ label: 'Leo', href: `${APP_URL}/leo`, target: '_blank', rel: 'noopener noreferrer' },
+	{ label: 'Roadmap', href: '/roadmap' }
 ];
 
 export const indicators: IndicatorItem[] = [
@@ -178,5 +178,5 @@ export const footerColumns: FooterColumn[] = [
 			{ label: 'API', href: '/api', target: '_blank', rel: 'noopener noreferrer' },
 			{ label: 'GitHub', href: 'https://github.com/jp066/ordinarium' }
 		]
-	},
+	}
 ];
