@@ -22,7 +22,7 @@ export const navItems: NavItem[] = [
 		rel: 'noopener noreferrer'
 	},
 	{ label: 'Leo', href: `${APP_URL}/leo`, target: '_blank', rel: 'noopener noreferrer' },
-	{ label: 'Roadmap', href: '/roadmap' }
+	{ label: 'Sugestões', href: '/roadmap' }
 ];
 
 export const indicators: IndicatorItem[] = [
@@ -102,6 +102,12 @@ export const showcaseModules = [
 		name: 'Exame de Consciência',
 		description: 'Prepare-se para uma boa confissão com um passo a passo guiado.',
 		image: '/assets/exame.png'
+	},
+	{
+		id: 'leo',
+		name: 'Leo',
+		description: 'Converse com o assistente virtual do Ordinarium para orações, leituras e reflexões.',
+		image: '/assets/mockup-chat.png'
 	}
 ];
 

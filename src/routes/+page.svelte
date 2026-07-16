@@ -3,6 +3,7 @@
 	import Hero from '../components/Hero.svelte';
 	import ScreensShowcase from '../components/ScreensShowcase.svelte';
 	import FeatureShowcase from '../components/FeatureShowcase.svelte';
+	import LeoSections from '../components/LeoSections.svelte';
 	import PartnershipSection from '../components/PartnershipSection.svelte';
 	import FAQSection from '../components/FAQSection.svelte';
 	import TestimonialsSection from '../components/TestimonialsSection.svelte';
@@ -98,6 +99,7 @@
 		</div>
 	</section>
 
+	<LeoSections />
 	<FAQSection />
 	<TestimonialsSection />
 	<PartnershipSection />
