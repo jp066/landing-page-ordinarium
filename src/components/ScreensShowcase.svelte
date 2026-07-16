@@ -7,28 +7,28 @@
 			title: 'Liturgia Diária',
 			description:
 				'Acompanhe as leituras, salmos e orações litúrgicas de cada dia de forma prática e limpa.',
-			image: '/assets/liturgia.png',
+			image: '/assets/liturgia-mobile.png',
 			alt: 'Tela de Liturgia Diária'
 		},
 		{
 			title: 'Paróquias e Horários',
 			description:
 				'Encontre horários de missas, confissões e adorações das comunidades mais próximas de você.',
-			image: '/assets/paroquias.png',
+			image: '/assets/paroquias-mobile.png',
 			alt: 'Tela de Paróquias'
 		},
 		{
 			title: 'Orações e Novenas',
 			description:
 				'Acesse um rico acervo de orações tradicionais e novenas para nutrir seu hábito diário de orar.',
-			image: '/assets/oracoes.png',
+			image: '/assets/oracoes-mobile.png',
 			alt: 'Tela de Orações'
 		},
 		{
 			title: 'Roteiros de Confissão',
 			description:
 				'Prepare-se bem para o sacramento da Reconciliação com um exame de consciência passo a passo.',
-			image: '/assets/exame.png',
+			image: '/assets/exame-mobile.png',
 			alt: 'Tela de Exame de Consciência'
 		}
 	];
@@ -68,7 +68,7 @@
 	<div class="max-w-6xl mx-auto">
 		<SectionTitle
 			supertitle=""
-			title="Sua vida de oração diária em um só lugar"
+			title="Sua vida de oração em um só lugar"
 			subtitle="No Ordinarium, você encontra tudo o que precisa para viver sua vida litúrgica com profundidade."
 			centered={true}
 			theme="light"
@@ -89,14 +89,14 @@
 					onmouseleave={startAutoplay}
 					onclick={() => setActive(0)}
 				>
-					<h4
+					<h3
 						class="text-lg font-serif font-semibold text-text-dark mb-2 transition-colors duration-200 {activeIndex ===
 						0
 							? 'text-primary'
 							: ''}"
 					>
 						{features[0].title}
-					</h4>
+					</h3>
 					<p class="text-sm text-text-dark/70 leading-relaxed font-sans">
 						{features[0].description}
 					</p>
@@ -113,14 +113,14 @@
 					onmouseleave={startAutoplay}
 					onclick={() => setActive(1)}
 				>
-					<h4
+					<h3
 						class="text-lg font-serif font-semibold text-text-dark mb-2 transition-colors duration-200 {activeIndex ===
 						1
 							? 'text-primary'
 							: ''}"
 					>
 						{features[1].title}
-					</h4>
+					</h3>
 					<p class="text-sm text-text-dark/70 leading-relaxed font-sans">
 						{features[1].description}
 					</p>
@@ -169,14 +169,14 @@
 					onmouseleave={startAutoplay}
 					onclick={() => setActive(2)}
 				>
-					<h4
+					<h3
 						class="text-lg font-serif font-semibold text-text-dark mb-2 transition-colors duration-200 {activeIndex ===
 						2
 							? 'text-primary'
 							: ''}"
 					>
 						{features[2].title}
-					</h4>
+					</h3>
 					<p class="text-sm text-text-dark/70 leading-relaxed font-sans">
 						{features[2].description}
 					</p>
@@ -193,14 +193,14 @@
 					onmouseleave={startAutoplay}
 					onclick={() => setActive(3)}
 				>
-					<h4
+					<h3
 						class="text-lg font-serif font-semibold text-text-dark mb-2 transition-colors duration-200 {activeIndex ===
 						3
 							? 'text-primary'
 							: ''}"
 					>
 						{features[3].title}
-					</h4>
+					</h3>
 					<p class="text-sm text-text-dark/70 leading-relaxed font-sans">
 						{features[3].description}
 					</p>

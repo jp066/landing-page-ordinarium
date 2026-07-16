@@ -24,9 +24,9 @@
 				<span class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">
 					Apoio
 				</span>
-				<h2 class="text-2xl md:text-3xl font-serif font-medium text-text-dark mb-4">
+				<h3 class="text-2xl md:text-3xl font-serif font-medium text-text-dark mb-4">
 					Arquidiocese de Teresina
-				</h2>
+				</h3>
 				<p class="text-sm text-text-dark/70 leading-relaxed mb-6 max-w-md">
 					Uma parceria que fortalece a presença digital da Igreja e facilita o acesso dos fiéis aos
 					recursos litúrgicos e pastorais. A Arquidiocese de Teresina éfundadora do Ordinarium e

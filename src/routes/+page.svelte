@@ -12,14 +12,10 @@
 </script>
 
 <svelte:head>
-	<title>Ordinarium</title>
+	<title>Ordinarium | Liturgia Diária, Horários de Missas e Orações</title>
 	<meta
 		name="description"
 		content="O Ordinarium reúne liturgia diária, horários de missas, diretório de paróquias, orações, exames de consciência e outras ferramentas para acompanhar sua vida espiritual todos os dias."
-	/>
-	<meta
-		name="keywords"
-		content="liturgia diária, horários de missas, paróquias católicas, orações católicas, exame de consciência, confissão, devoção católica, ordinarium, aplicativo católico"
 	/>
 	<meta name="robots" content="index, follow" />
 	<link rel="canonical" href="https://ordinarium.vercel.app" />
@@ -76,7 +72,75 @@
 					"description": "O Ordinarium reúne liturgia diária, horários de missas, diretório de paróquias, orações, exames de consciência e outras ferramentas para acompanhar sua vida espiritual todos os dias.",
 					"url": "https://ordinarium.vercel.app",
 					"image": "https://ordinarium.vercel.app/assets/image.png",
-					"applicationSubCategory": "Religioso, Devoção, Organização Litúrgica"
+					"applicationSubCategory": "Religioso, Devoção, Organização Litúrgica",
+					"author": {
+						"@type": "Person",
+						"name": "João Pedro Matos",
+						"url": "https://www.linkedin.com/in/joao-pedro-matos-dev/"
+					},
+					"sponsor": {
+						"@type": "Organization",
+						"name": "Arquidiocese de Teresina",
+						"url": "https://arquidiocesedeteresina.org.br/"
+					}
+				},
+				{
+					"@type": "FAQPage",
+					"@id": "https://ordinarium.vercel.app/#faq",
+					"isPartOf": {
+						"@id": "https://ordinarium.vercel.app/#website"
+					},
+					"inLanguage": "pt-BR",
+					"mainEntity": [
+						{
+							"@type": "Question",
+							"name": "O que é o Ordinarium?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "O Ordinarium é um aplicativo católico que reúne liturgia diária, horários de missas, diretório de paróquias, orações e exames de consciência — tudo em um só lugar para acompanhar sua vida espiritual todos os dias."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "É gratuito?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Sim, o Ordinarium é um projeto independente e sem anúncios. Você pode usar todas as funcionalidades básicas gratuitamente. Algumas ferramentas avançadas poderão ter acesso em breve."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "Como encontrar minha paróquia?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "No app, acesse a seção \"Paróquias\" e permita o acesso à sua localização. O Ordinarium mostra as paróquias mais próximas com contatos, horários e mapas integrados."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "Posso usar offline?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Parte do conteúdo, como orações e liturgia do dia, pode ser acessado offline após o primeiro carregamento. Funcionalidades como mapas de paróquias precisam de conexão com a internet."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "Como contribuir com o projeto?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "O Ordinarium é mantido pela generosidade da comunidade. Você pode contribuir financeiramente ou ajudar com código-fonte no GitHub. Acesse a seção \"Contribuir\" para mais informações."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "Quem está por trás do Ordinarium?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "O Ordinarium é um projeto colaborativo feito por católicos, em parceria com a Arquidiocese de Teresina e outros apoiadores. Nosso objetivo é facilitar a vida de oração dos fiéis no Brasil."
+							}
+						}
+					]
 				}
 			]
 		}

@@ -11,17 +11,13 @@ import { ARCHDIOCESE_URL, APP_URL } from './constants';
 export const navItems: NavItem[] = [
 	{
 		label: 'Paróquias',
-		href: 'https://ordinarium.vercel.app/paroquias',
-		target: '_blank',
-		rel: 'noopener noreferrer'
+		href: `${APP_URL}/paroquias`
 	},
 	{
 		label: 'Horários',
-		href: 'https://ordinarium.vercel.app/horarios',
-		target: '_blank',
-		rel: 'noopener noreferrer'
+		href: `${APP_URL}/horarios`
 	},
-	{ label: 'Leo', href: `${APP_URL}/leo`, target: '_blank', rel: 'noopener noreferrer' },
+	{ label: 'Leo', href: `${APP_URL}/leo` },
 	{ label: 'Sugestões', href: '/roadmap' }
 ];
 
@@ -163,26 +159,26 @@ export const footerColumns: FooterColumn[] = [
 	{
 		title: 'Navegação',
 		links: [
-			{ label: 'Recursos', href: '#recursos' },
-			{ label: 'Sobre', href: '#sobre' },
-			{ label: 'Parceria', href: '#parceria' },
-			{ label: 'Contato', href: '#contato' }
+			{ label: 'Recursos', href: '/#recursos' },
+			{ label: 'Sobre', href: '/#sobre' },
+			{ label: 'Parceria', href: '/#parceria' },
+			{ label: 'Contato', href: '/#contato' }
 		]
 	},
 	{
 		title: 'Recursos',
 		links: [
-			{ label: 'Horários', href: '#recursos' },
-			{ label: 'Paróquias', href: '#recursos' },
-			{ label: 'Liturgia', href: '#recursos' },
-			{ label: 'Orações', href: '#recursos' }
+			{ label: 'Horários', href: '/#recursos' },
+			{ label: 'Paróquias', href: '/#recursos' },
+			{ label: 'Liturgia', href: '/#recursos' },
+			{ label: 'Orações', href: '/#recursos' }
 		]
 	},
 	{
 		title: 'Desenvolvedores',
 		links: [
-			{ label: 'API', href: '/api', target: '_blank', rel: 'noopener noreferrer' },
-			{ label: 'GitHub', href: 'https://github.com/jp066/ordinarium' }
+			{ label: 'API', href: '/api' },
+			{ label: 'GitHub', href: 'https://github.com/jp066/ordinarium', target: '_blank', rel: 'noopener noreferrer' }
 		]
 	}
 ];

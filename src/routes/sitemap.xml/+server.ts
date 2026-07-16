@@ -16,6 +16,16 @@ export async function GET() {
 		<priority>0.8</priority>
 	</url>
 	<url>
+		<loc>${APP_URL}/roadmap</loc>
+		<changefreq>daily</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>${APP_URL}/parceria/arquidiocese-de-teresina</loc>
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
 		<loc>${APP_URL}/privacidade</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>

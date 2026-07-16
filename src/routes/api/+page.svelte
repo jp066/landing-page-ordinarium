@@ -590,9 +590,7 @@
 						title="Buscar Orações"
 						desc="Pesquisa case-insensitive por título, texto ou categoria (ignorando acentos)."
 						path={PATH_SEARCH}
-						curl="curl "
-						https:
-						//api.ordinarium.com.br/api/v1/prayers/search?q=espirito""
+						curl="curl https://api.ordinarium.com.br/api/v1/prayers/search?q=espirito"
 						response={`[
   {
     "id": 8,
@@ -688,9 +686,7 @@
 						title="Perguntas por Categoria"
 						desc="Retorna as perguntas de uma categoria específica do exame de consciência."
 						path={PATH_CATEGORY}
-						curl="curl "
-						https:
-						//api.ordinarium.com.br/api/v1/examination/Família""
+						curl="curl https://api.ordinarium.com.br/api/v1/examination/Família"
 						response={`{
   "category": "Família",
   "questions": [
@@ -961,9 +957,7 @@
 						title="Busca Textual"
 						desc="Busca uma palavra ou frase em toda a Bíblia, retornando as ocorrências com livro, capítulo e versículo."
 						path="/api/v1/bible/search?q={'{'}termo{'}'}"
-						curl="curl "
-						https:
-						//api.ordinarium.com.br/api/v1/bible/search?q=amor""
+						curl="curl https://api.ordinarium.com.br/api/v1/bible/search?q=amor"
 						response={`[
   {
     "book": "Evangelho segundo S. João",
@@ -1111,9 +1105,7 @@
 						title="Santo por Data"
 						desc="Retorna o(s) santo(s) celebrado(s) em uma data específica."
 						path="/santo-do-dia/dia={'{'}dia{'}'}&mes={'{'}mes{'}'}"
-						curl="curl "
-						https:
-						//api.ordinarium.com.br/santo-do-dia/dia=5&mes=6""
+						curl="curl https://api.ordinarium.com.br/santo-do-dia/dia=5&mes=6"
 						response={`{
   "results": [
     {
