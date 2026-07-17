@@ -12,20 +12,23 @@
 		content="Conheça a parceria entre o Ordinarium e a Arquidiocese de Teresina, unindo tecnologia e missão pastoral para aproximar os fiéis da vida da Igreja."
 	/>
 	<meta name="robots" content="index, follow" />
-	<link rel="canonical" href="https://ordinarium-zeta.vercel.app/parceria/arquidiocese-de-teresina" />
+	<link
+		rel="canonical"
+		href="https://ordinarium.com.br/parceria/arquidiocese-de-teresina"
+	/>
 
 	<!-- Open Graph -->
 	<meta property="og:type" content="website" />
 	<meta
 		property="og:url"
-		content="https://ordinarium-zeta.vercel.app/parceria/arquidiocese-de-teresina"
+		content="https://ordinarium.com.br/parceria/arquidiocese-de-teresina"
 	/>
 	<meta property="og:title" content="Ordinarium × Arquidiocese de Teresina" />
 	<meta
 		property="og:description"
 		content="Conheça a parceria entre o Ordinarium e a Arquidiocese de Teresina."
 	/>
-	<meta property="og:image" content="https://ordinarium-zeta.vercel.app/assets/image.png" />
+	<meta property="og:image" content="https://ordinarium.com.br/assets/image.png" />
 </svelte:head>
 
 <main class="min-h-screen bg-bg-dark text-text-light">
@@ -132,7 +135,9 @@
 				<Button href="/" variant="primary" size="md" class="font-semibold">
 					Voltar para o início
 				</Button>
-				<Button href="https://ordinarium-zeta.vercel.app" variant="outline" size="md">Conhecer</Button>
+				<Button href="https://ordinarium.com.br" variant="outline" size="md"
+					>Conhecer</Button
+				>
 				<Button
 					href={ARCHDIOCESE_URL}
 					variant="outline"

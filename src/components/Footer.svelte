@@ -115,6 +115,7 @@
 		</div>
 
 		<!-- Partner logos strip -->
+	<!--
 		<div class="flex flex-wrap justify-center gap-8 items-center py-8 border-b border-white/5">
 			<span class="text-xs text-text-secondary">Parceiros e Apoiadores</span>
 			<div class="flex items-center gap-8">
@@ -131,7 +132,7 @@
 					/>
 					<span class="text-xs text-text-secondary">Arquidiocese de Teresina</span>
 				</a>
-				<a
+								<a
 					href="https://www.instagram.com/dompodcast/"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -141,38 +142,42 @@
 					<span class="text-xs text-text-secondary">Dom Podcast</span>
 				</a>
 			</div>
-		</div>
+		</div> 
+	-->
 
-		<!-- Bottom footer bar -->
-		<div
-			class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left"
-		>
-			<div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
-				<span class="text-xs text-text-secondary">
-					&copy; 2026 Ordinarium. Todos os direitos reservados.
-				</span>
-				<div class="flex items-center gap-4">
-					<a
-						href="/privacidade"
-						class="text-xs text-text-secondary hover:text-primary transition-fast"
-					>
-						Privacidade
-					</a>
-					<a href="/termos" class="text-xs text-text-secondary hover:text-primary transition-fast">
-						Termos
-					</a>
+				<!-- Bottom footer bar -->
+				<div
+					class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left"
+				>
+					<div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
+						<span class="text-xs text-text-secondary">
+							&copy; 2026 Ordinarium. Todos os direitos reservados.
+						</span>
+						<div class="flex items-center gap-4">
+							<a
+								href="/privacidade"
+								class="text-xs text-text-secondary hover:text-primary transition-fast"
+							>
+								Privacidade
+							</a>
+							<a
+								href="/termos"
+								class="text-xs text-text-secondary hover:text-primary transition-fast"
+							>
+								Termos
+							</a>
+						</div>
+					</div>
+
+					<!-- Dedication -->
+					<span class="text-xs text-text-secondary flex items-center gap-1">
+						Desenvolvido por <a
+							href="https://www.linkedin.com/in/joao-pedro-matos-dev/"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-primary hover:underline transition-fast">João Pedro Matos</a
+						>
+					</span>
 				</div>
 			</div>
-
-			<!-- Dedication -->
-			<span class="text-xs text-text-secondary flex items-center gap-1">
-				Desenvolvido por <a
-					href="https://www.linkedin.com/in/joao-pedro-matos-dev/"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="text-primary hover:underline transition-fast">João Pedro Matos</a
-				>
-			</span>
-		</div>
-	</div>
 </footer>

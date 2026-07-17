@@ -2,8 +2,8 @@
 	import { APP_URL } from '../lib/constants';
 </script>
 
-<section class="w-full py-12 px-6 md:px-12 bg-white">
-	<div class="max-w-6xl mx-auto">
+<section class="w-full py-12 px-6 md:px-12 bg-bg-light">
+	<div class="max-w-7xl mx-auto">
 		<div
 			class="download-section relative rounded-[32px] overflow-hidden px-8 py-20 md:px-16 md:py-28 flex flex-col items-center text-center"
 		>

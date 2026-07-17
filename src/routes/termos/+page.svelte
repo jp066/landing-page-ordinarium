@@ -10,17 +10,17 @@
 		content="Conheça os termos de uso do Ordinarium, plataforma digital católica para auxiliar os fiéis na vivência da fé."
 	/>
 	<meta name="robots" content="index, follow" />
-	<link rel="canonical" href="https://ordinarium-zeta.vercel.app/termos" />
+	<link rel="canonical" href="https://ordinarium.com.br/termos" />
 
 	<!-- Open Graph -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://ordinarium-zeta.vercel.app/termos" />
+	<meta property="og:url" content="https://ordinarium.com.br/termos" />
 	<meta property="og:title" content="Termos de Uso — Ordinarium" />
 	<meta
 		property="og:description"
 		content="Conheça os termos de uso do Ordinarium, plataforma digital católica para auxiliar os fiéis na vivência da fé."
 	/>
-	<meta property="og:image" content="https://ordinarium-zeta.vercel.app/assets/image.png" />
+	<meta property="og:image" content="https://ordinarium.com.br/assets/image.png" />
 </svelte:head>
 
 <main class="min-h-screen bg-bg-dark text-text-light">

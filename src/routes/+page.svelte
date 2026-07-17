@@ -7,6 +7,7 @@
 	import PartnershipSection from '../components/PartnershipSection.svelte';
 	import FAQSection from '../components/FAQSection.svelte';
 	import TestimonialsSection from '../components/TestimonialsSection.svelte';
+	import WaitlistSection from '../components/WaitlistSection.svelte';
 	import DownloadSection from '../components/DownloadSection.svelte';
 	import Footer from '../components/Footer.svelte';
 </script>
@@ -18,17 +19,17 @@
 		content="O Ordinarium reúne liturgia diária, horários de missas, diretório de paróquias, orações, exames de consciência e outras ferramentas para acompanhar sua vida espiritual todos os dias."
 	/>
 	<meta name="robots" content="index, follow" />
-	<link rel="canonical" href="https://ordinarium-zeta.vercel.app" />
+	<link rel="canonical" href="https://ordinarium.com.br" />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://ordinarium-zeta.vercel.app" />
+	<meta property="og:url" content="https://ordinarium.com.br" />
 	<meta property="og:title" content="Ordinarium em um só lugar" />
 	<meta
 		property="og:description"
 		content="O Ordinarium reúne liturgia diária, horários de missas, diretório de paróquias, orações, exames de consciência e outras ferramentas para acompanhar sua vida espiritual todos os dias."
 	/>
-	<meta property="og:image" content="https://ordinarium-zeta.vercel.app/assets/image.png" />
+	<meta property="og:image" content="https://ordinarium.com.br/assets/image.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta property="og:image:alt" content="Ordinarium" />
@@ -37,13 +38,13 @@
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="https://ordinarium-zeta.vercel.app" />
+	<meta property="twitter:url" content="https://ordinarium.com.br" />
 	<meta property="twitter:title" content="Ordinarium em um só lugar" />
 	<meta
 		property="twitter:description"
 		content="O Ordinarium reúne liturgia diária, horários de missas, diretório de paróquias, orações, exames de consciência e outras ferramentas para acompanhar sua vida espiritual todos os dias."
 	/>
-	<meta property="twitter:image" content="https://ordinarium-zeta.vercel.app/assets/image.png" />
+	<meta property="twitter:image" content="https://ordinarium.com.br/assets/image.png" />
 
 	<!-- Structured Data (JSON-LD) -->
 	<script type="application/ld+json">
@@ -52,15 +53,15 @@
 			"@graph": [
 				{
 					"@type": "WebSite",
-					"@id": "https://ordinarium-zeta.vercel.app/#website",
-					"url": "https://ordinarium-zeta.vercel.app",
+					"@id": "https://ordinarium.com.br/#website",
+					"url": "https://ordinarium.com.br",
 					"name": "Ordinarium",
 					"description": "O Ordinarium reúne liturgia diária, horários de missas, diretório de paróquias, orações, exames de consciência e outras ferramentas para acompanhar sua vida espiritual todos os dias.",
 					"inLanguage": "pt-BR"
 				},
 				{
 					"@type": "SoftwareApplication",
-					"@id": "https://ordinarium-zeta.vercel.app/#software",
+					"@id": "https://ordinarium.com.br/#software",
 					"name": "Ordinarium",
 					"operatingSystem": "All",
 					"applicationCategory": "LifestyleApplication",
@@ -70,8 +71,8 @@
 						"priceCurrency": "BRL"
 					},
 					"description": "O Ordinarium reúne liturgia diária, horários de missas, diretório de paróquias, orações, exames de consciência e outras ferramentas para acompanhar sua vida espiritual todos os dias.",
-					"url": "https://ordinarium-zeta.vercel.app",
-					"image": "https://ordinarium-zeta.vercel.app/assets/image.png",
+					"url": "https://ordinarium.com.br",
+					"image": "https://ordinarium.com.br/assets/image.png",
 					"applicationSubCategory": "Religioso, Devoção, Organização Litúrgica",
 					"author": {
 						"@type": "Person",
@@ -86,9 +87,9 @@
 				},
 				{
 					"@type": "FAQPage",
-					"@id": "https://ordinarium-zeta.vercel.app/#faq",
+					"@id": "https://ordinarium.com.br/#faq",
 					"isPartOf": {
-						"@id": "https://ordinarium-zeta.vercel.app/#website"
+						"@id": "https://ordinarium.com.br/#website"
 					},
 					"inLanguage": "pt-BR",
 					"mainEntity": [
@@ -97,47 +98,63 @@
 							"name": "O que é o Ordinarium?",
 							"acceptedAnswer": {
 								"@type": "Answer",
-								"text": "O Ordinarium é um aplicativo católico que reúne liturgia diária, horários de missas, diretório de paróquias, orações e exames de consciência — tudo em um só lugar para acompanhar sua vida espiritual todos os dias."
+								"text": "O Ordinarium é um aplicativo criado para ajudar os católicos a viverem melhor sua fé no dia a dia, reunindo recursos para oração, liturgia, formação e acompanhamento da vida espiritual."
 							}
 						},
 						{
 							"@type": "Question",
-							"name": "É gratuito?",
+							"name": "Por que o nome Ordinarium?",
 							"acceptedAnswer": {
 								"@type": "Answer",
-								"text": "Sim, o Ordinarium é um projeto independente e sem anúncios. Você pode usar todas as funcionalidades básicas gratuitamente. Algumas ferramentas avançadas poderão ter acesso em breve."
+								"text": "Ordinarium vem do latim e está relacionado àquilo que é ordinário, comum e cotidiano. O nome representa a missão do aplicativo: ajudar os fiéis a integrarem a fé à sua vida comum, tornando a oração, a liturgia e a caminhada espiritual parte da rotina."
 							}
 						},
 						{
 							"@type": "Question",
-							"name": "Como encontrar minha paróquia?",
+							"name": "O que posso fazer no Ordinarium?",
 							"acceptedAnswer": {
 								"@type": "Answer",
-								"text": "No app, acesse a seção \"Paróquias\" e permita o acesso à sua localização. O Ordinarium mostra as paróquias mais próximas com contatos, horários e mapas integrados."
+								"text": "O Ordinarium reúne recursos para auxiliar sua caminhada espiritual, como: encontrar paróquias, consultar horários de missas e confissões, acompanhar a liturgia diária, ler a Bíblia, acessar orações, conhecer o santo do dia, realizar exames de consciência, acompanhar sua vida espiritual e conversar com o assistente Leo."
 							}
 						},
 						{
 							"@type": "Question",
-							"name": "Posso usar offline?",
+							"name": "O que é o Leo?",
 							"acceptedAnswer": {
 								"@type": "Answer",
-								"text": "Parte do conteúdo, como orações e liturgia do dia, pode ser acessado offline após o primeiro carregamento. Funcionalidades como mapas de paróquias precisam de conexão com a internet."
+								"text": "O Leo é o assistente inteligente do Ordinarium. Ele ajuda os usuários a encontrar conteúdos, utilizar recursos da plataforma e refletir sobre diferentes aspectos da vida espiritual."
 							}
 						},
 						{
 							"@type": "Question",
-							"name": "Como contribuir com o projeto?",
+							"name": "O Leo substitui um padre ou confessor?",
 							"acceptedAnswer": {
 								"@type": "Answer",
-								"text": "O Ordinarium é mantido pela generosidade da comunidade. Você pode contribuir financeiramente ou ajudar com código-fonte no GitHub. Acesse a seção \"Contribuir\" para mais informações."
+								"text": "Não. O Leo é uma ferramenta tecnológica de apoio e não substitui a confissão sacramental, a direção espiritual, um sacerdote, a comunidade ou a autoridade da Igreja Católica."
 							}
 						},
 						{
 							"@type": "Question",
-							"name": "Quem está por trás do Ordinarium?",
+							"name": "O Ordinarium é oficialmente ligado à Igreja Católica?",
 							"acceptedAnswer": {
 								"@type": "Answer",
-								"text": "O Ordinarium é um projeto colaborativo feito por católicos, em parceria com a Arquidiocese de Teresina e outros apoiadores. Nosso objetivo é facilitar a vida de oração dos fiéis no Brasil."
+								"text": "O Ordinarium é uma plataforma independente, desenvolvida para católicos. Não é oficialmente administrado ou mantido pela Santa Sé, por uma diocese específica ou por outra instituição da Igreja Católica, salvo quando expressamente indicado."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "O Ordinarium é gratuito?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Sim. O Ordinarium oferece recursos gratuitos para todos os usuários."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "O Ordinarium utiliza meus dados para treinar inteligência artificial?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "O Ordinarium não utiliza suas informações pessoais ou conteúdos privados para treinar modelos de inteligência artificial próprios sem uma finalidade informada ao usuário."
 							}
 						}
 					]
@@ -166,7 +183,8 @@
 	<LeoSections />
 	<FAQSection />
 	<TestimonialsSection />
-	<PartnershipSection />
+	<!--<PartnershipSection />-->
+	<WaitlistSection />
 	<DownloadSection />
 </main>
 <Footer />

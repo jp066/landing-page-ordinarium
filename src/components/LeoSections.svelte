@@ -64,18 +64,30 @@
 
 			<div class="flex justify-center items-center">
 				<!-- Decorative Outer Glow -->
-				<div class="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] aspect-[4/5] group select-none">
+				<div
+					class="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] aspect-[4/5] group select-none"
+				>
 					<!-- Ambient background glow behind the card -->
-					<div class="absolute -inset-1 bg-gradient-to-r from-primary/10 to-primary/5 rounded-[32px] blur-xl opacity-70 group-hover:opacity-100 transition duration-700"></div>
-					
+					<div
+						class="absolute -inset-1 bg-gradient-to-r from-primary/10 to-primary/5 rounded-[32px] blur-xl opacity-70 group-hover:opacity-100 transition duration-700"
+					></div>
+
 					<!-- Main Card Container -->
-					<div class="relative w-full h-full rounded-[28px] overflow-hidden bg-gradient-to-b from-[#161513] to-[#0f0e0c] border border-border-gold/20 shadow-2xl flex flex-col justify-between p-6">
+					<div
+						class="relative w-full h-full rounded-[28px] overflow-hidden bg-gradient-to-b from-[#161513] to-[#0f0e0c] border border-border-gold/20 shadow-2xl flex flex-col justify-between p-6"
+					>
 						<!-- Decorative grid pattern & inner glow -->
-						<div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
-						<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+						<div
+							class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"
+						></div>
+						<div
+							class="absolute top-1/4 left-1/2 -translate-x-1/2 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"
+						></div>
 
 						<!-- Mockup Image - Flush to the bottom of the card -->
-						<div class="relative w-full h-[85%] flex items-end justify-center mt-auto overflow-hidden">
+						<div
+							class="relative w-full h-[85%] flex items-end justify-center mt-auto overflow-hidden"
+						>
 							<img
 								src="/assets/mockup-chat.png"
 								alt="Conversa com o Leo"

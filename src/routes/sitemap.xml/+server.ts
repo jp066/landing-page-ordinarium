@@ -35,6 +35,11 @@ export async function GET() {
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
+	<url>
+		<loc>${APP_URL}/faq</loc>
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
 </urlset>`;
 
 	return new Response(body, {

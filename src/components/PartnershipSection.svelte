@@ -43,7 +43,7 @@
 			</div>
 		</div>
 
-		<!-- Logo strip -->
+		<!-- Logo strip 
 		<div class="mt-20 pt-12 border-t border-border-gold/15">
 			<p class="text-xs font-semibold tracking-widest uppercase text-text-dark/40 text-center mb-8">
 				Parceiros e Apoiadores
@@ -59,6 +59,6 @@
 					<span class="text-sm text-text-dark/70 font-sans">Dom Podcast</span>
 				</a>
 			</div>
-		</div>
+		</div>-->
 	</div>
 </section>

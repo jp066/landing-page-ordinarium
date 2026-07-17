@@ -37,6 +37,11 @@ export interface FAQItem {
 	answer: string;
 }
 
+export interface FAQCategory {
+	title: string;
+	items: FAQItem[];
+}
+
 export interface FooterLink {
 	label: string;
 	href: string;

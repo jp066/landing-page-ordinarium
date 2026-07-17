@@ -128,30 +128,30 @@
 		content="api ordinarium, api paróquias, api orações, api bíblia, api liturgia diaria, desenvolvedores católicos, documentação api"
 	/>
 	<meta name="robots" content="index, follow" />
-	<link rel="canonical" href="https://ordinarium-zeta.vercel.app/api" />
+	<link rel="canonical" href="https://ordinarium.com.br/api" />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://ordinarium-zeta.vercel.app/api" />
+	<meta property="og:url" content="https://ordinarium.com.br/api" />
 	<meta property="og:title" content="API | Ordinarium - Documentação para Desenvolvedores" />
 	<meta
 		property="og:description"
 		content="Documentação das APIs do Ordinarium: Paróquias, Orações, Bíblia Sagrada, Exame de Consciência, Santo do Dia e Liturgia Diária."
 	/>
-	<meta property="og:image" content="https://ordinarium-zeta.vercel.app/assets/image.png" />
+	<meta property="og:image" content="https://ordinarium.com.br/assets/image.png" />
 	<meta property="og:image:alt" content="Documentação da API Ordinarium" />
 	<meta property="og:locale" content="pt_BR" />
 	<meta property="og:site_name" content="Ordinarium" />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="https://ordinarium-zeta.vercel.app/api" />
+	<meta property="twitter:url" content="https://ordinarium.com.br/api" />
 	<meta property="twitter:title" content="API | Ordinarium - Documentação para Desenvolvedores" />
 	<meta
 		property="twitter:description"
 		content="Documentação das APIs do Ordinarium: Paróquias, Orações, Bíblia Sagrada, Exame de Consciência, Santo do Dia e Liturgia Diária."
 	/>
-	<meta property="twitter:image" content="https://ordinarium-zeta.vercel.app/assets/image.png" />
+	<meta property="twitter:image" content="https://ordinarium.com.br/assets/image.png" />
 
 	<!-- Structured Data (JSON-LD) -->
 	<script type="application/ld+json">
@@ -160,25 +160,25 @@
 			"@graph": [
 				{
 					"@type": "WebPage",
-					"@id": "https://ordinarium-zeta.vercel.app/api/#webpage",
-					"url": "https://ordinarium-zeta.vercel.app/api",
+					"@id": "https://ordinarium.com.br/api/#webpage",
+					"url": "https://ordinarium.com.br/api",
 					"name": "API Ordinarium - Documentação para Desenvolvedores",
 					"description": "Documentação das APIs do Ordinarium: Paróquias, Orações, Bíblia Sagrada, Exame de Consciência, Santo do Dia e Liturgia Diária.",
 					"inLanguage": "pt-BR"
 				},
 				{
 					"@type": "TechArticle",
-					"@id": "https://ordinarium-zeta.vercel.app/api/#article",
+					"@id": "https://ordinarium.com.br/api/#article",
 					"headline": "API Ordinarium - Documentação para Desenvolvedores",
 					"description": "Documentação das APIs do Ordinarium: Paróquias, Orações, Bíblia Sagrada, Exame de Consciência, Santo do Dia e Liturgia Diária.",
 					"inLanguage": "pt-BR",
-					"mainEntityOfPage": "https://ordinarium-zeta.vercel.app/api",
+					"mainEntityOfPage": "https://ordinarium.com.br/api",
 					"publisher": {
 						"@type": "Organization",
 						"name": "Ordinarium",
 						"logo": {
 							"@type": "ImageObject",
-							"url": "https://ordinarium-zeta.vercel.app/assets/favicon.png"
+							"url": "https://ordinarium.com.br/assets/favicon.png"
 						}
 					}
 				}
