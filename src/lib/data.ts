@@ -342,7 +342,6 @@ export const footerColumns: FooterColumn[] = [
 			{ label: 'Recursos', href: '/#recursos' },
 			{ label: 'Sobre', href: '/#sobre' },
 			{ label: 'Perguntas frequentes', href: '/faq' },
-			{ label: 'Parceria', href: '/#parceria' },
 			{ label: 'Contato', href: '/#contato' }
 		]
 	},
