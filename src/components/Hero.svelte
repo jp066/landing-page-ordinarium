@@ -58,6 +58,9 @@
 					<Button href={APP_URL} variant="white" size="lg" class="group font-semibold">
 						Experimente o &nbsp; <span class="font-gothic">Ordinarium</span>
 					</Button>
+					<Button href="/roadmap" variant="ghost" size="lg" class="lg:hidden">
+						Sugestões
+					</Button>
 				</div>
 			</div>
 		</div>
