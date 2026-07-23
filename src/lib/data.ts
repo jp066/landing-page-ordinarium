@@ -1,4 +1,18 @@
-import { BookMarked, Church, Clock, Sparkles, Shield, Heart, Users } from '@lucide/svelte';
+import {
+	BookMarked,
+	Church,
+	Clock,
+	Sparkles,
+	Shield,
+	Heart,
+	Users,
+	Server,
+	Code,
+	BrainCircuit,
+	BookOpen,
+	Smartphone,
+	Pencil
+} from '@lucide/svelte';
 import type {
 	NavItem,
 	IndicatorItem,
@@ -7,7 +21,8 @@ import type {
 	TestimonialItem,
 	FAQItem,
 	FAQCategory,
-	FooterColumn
+	FooterColumn,
+	SupportReason
 } from './types';
 import { ARCHDIOCESE_URL, APP_URL } from './constants';
 export const navItems: NavItem[] = [
@@ -182,8 +197,7 @@ export const faqItems: FAQItem[] = [
 	},
 	{
 		question: 'O Ordinarium é gratuito?',
-		answer:
-			'Sim. O Ordinarium oferece recursos gratuitos para todos os usuários.'
+		answer: 'Sim. O Ordinarium oferece recursos gratuitos para todos os usuários.'
 	},
 	{
 		question: 'O Ordinarium utiliza meus dados para treinar inteligência artificial?',
@@ -268,8 +282,7 @@ export const faqPageCategories: FAQCategory[] = [
 		items: [
 			{
 				question: 'O Ordinarium é gratuito?',
-				answer:
-					'Sim. O Ordinarium oferece recursos gratuitos para todos os usuários.'
+				answer: 'Sim. O Ordinarium oferece recursos gratuitos para todos os usuários.'
 			},
 			{
 				question: 'O que está incluído no plano gratuito?',
@@ -342,6 +355,7 @@ export const footerColumns: FooterColumn[] = [
 			{ label: 'Recursos', href: '/#recursos' },
 			{ label: 'Sobre', href: '/#sobre' },
 			{ label: 'Perguntas frequentes', href: '/faq' },
+			{ label: 'Apoiar', href: '/apoiar' },
 			{ label: 'Contato', href: '/#contato' }
 		]
 	},
@@ -360,10 +374,49 @@ export const footerColumns: FooterColumn[] = [
 			{ label: 'API', href: '/api' },
 			{
 				label: 'GitHub',
-				href: 'https://github.com/jp066/ordinarium',
+				href: 'https://github.com/masteryogo/ordinarium',
 				target: '_blank',
 				rel: 'noopener noreferrer'
 			}
 		]
+	}
+];
+
+export const supportReasons: SupportReason[] = [
+	{
+		icon: Server,
+		title: 'Infraestrutura',
+		description:
+			'Manter servidores, serviços em nuvem e ferramentas essenciais para o funcionamento contínuo do aplicativo.'
+	},
+	{
+		icon: Code,
+		title: 'Novas funcionalidades',
+		description:
+			'Desenvolver recursos que ampliam as possibilidades do Ordinarium e atendem melhor às necessidades dos usuários.'
+	},
+	{
+		icon: Smartphone,
+		title: 'Experiência do usuário',
+		description:
+			'Melhorar a interface, o desempenho e a usabilidade para que cada interação seja mais simples e agradável.'
+	},
+	{
+		icon: BrainCircuit,
+		title: 'Inteligência artificial',
+		description:
+			'Manter e aprimorar os recursos de IA, como o Leo, que oferecem assistência espiritual personalizada.'
+	},
+	{
+		icon: BookOpen,
+		title: 'Produção de conteúdos',
+		description:
+			'Organizar, revisar e disponibilizar conteúdos litúrgicos, orações e textos para alimentar a vida espiritual dos fiéis.'
+	},
+	{
+		icon: Pencil,
+		title: 'Manutenção e melhorias',
+		description:
+			'Corrigir problemas, atualizar dependências e garantir que o Ordinarium permaneça estável e seguro.'
 	}
 ];

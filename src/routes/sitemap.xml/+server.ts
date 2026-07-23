@@ -40,6 +40,11 @@ export async function GET() {
 		<changefreq>monthly</changefreq>
 		<priority>0.7</priority>
 	</url>
+	<url>
+		<loc>${APP_URL}/apoiar</loc>
+		<changefreq>monthly</changefreq>
+		<priority>0.8</priority>
+	</url>
 </urlset>`;
 
 	return new Response(body, {

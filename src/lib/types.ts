@@ -53,3 +53,9 @@ export interface FooterColumn {
 	title: string;
 	links: FooterLink[];
 }
+
+export interface SupportReason {
+	icon: Component;
+	title: string;
+	description: string;
+}
