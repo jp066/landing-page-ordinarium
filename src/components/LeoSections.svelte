@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { inView } from '$lib/actions';
 	import { APP_URL } from '../lib/constants';
 	import SectionTitle from './SectionTitle.svelte';
 	import Button from './Button.svelte';
@@ -30,6 +31,7 @@
 
 <section
 	id="leo"
+	use:inView
 	class="w-full py-24 bg-bg-light text-text-dark px-6 md:px-12 border-t border-border-gold/15"
 >
 	<div class="max-w-6xl mx-auto">
@@ -43,10 +45,11 @@
 
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mt-16 items-center">
 			<div class="space-y-4">
-				{#each capabilities as item}
-					<div
-						class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-border-gold/15 hover:border-primary/30 hover:shadow-md transition-all duration-300"
-					>
+			{#each capabilities as item, idx}
+				<div
+					use:inView
+					class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-border-gold/15 hover:border-primary/30 hover:shadow-md transition-all duration-300 reveal reveal-delay-{Math.min(idx + 1, 4)}"
+				>
 						<div>
 							<h4 class="text-base font-semibold text-text-dark">{item.title}</h4>
 							<p class="text-sm text-text-dark/65 leading-relaxed">{item.desc}</p>

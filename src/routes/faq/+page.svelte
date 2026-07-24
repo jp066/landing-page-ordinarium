@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { ArrowLeft, ChevronDown } from '@lucide/svelte';
-	import Footer from '../../components/Footer.svelte';
 	import { faqPageCategories } from '$lib/data';
 
 	let openIndices: (number | null)[] = $state(faqPageCategories.map(() => null));
@@ -12,26 +11,95 @@
 </script>
 
 <svelte:head>
-	<title>Perguntas frequentes — Ordinarium</title>
+	<title>Perguntas Frequentes — Ordinarium</title>
 	<meta
 		name="description"
-		content="Encontre respostas sobre o Ordinarium, seus recursos, planos, privacidade e uso."
+		content="Encontre respostas sobre o Ordinarium, seus recursos, planos, privacidade e uso cotidianos."
 	/>
 	<meta name="robots" content="index, follow" />
 	<link rel="canonical" href="https://ordinarium.com.br/faq" />
 
-	<!-- Open Graph -->
+	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://ordinarium.com.br/faq" />
-	<meta property="og:title" content="Perguntas frequentes — Ordinarium" />
+	<meta property="og:title" content="Perguntas Frequentes — Ordinarium" />
 	<meta
 		property="og:description"
-		content="Encontre respostas sobre o Ordinarium, seus recursos, planos, privacidade e uso."
+		content="Encontre respostas sobre o Ordinarium, seus recursos, planos, privacidade e uso cotidianos."
 	/>
 	<meta property="og:image" content="https://ordinarium.com.br/assets/image.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:alt" content="FAQ Ordinarium" />
+	<meta property="og:locale" content="pt_BR" />
+	<meta property="og:site_name" content="Ordinarium" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://ordinarium.com.br/faq" />
+	<meta property="twitter:title" content="Perguntas Frequentes — Ordinarium" />
+	<meta
+		property="twitter:description"
+		content="Encontre respostas sobre o Ordinarium, seus recursos, planos, privacidade e uso cotidianos."
+	/>
+	<meta property="twitter:image" content="https://ordinarium.com.br/assets/image.png" />
+
+	<!-- Dynamic FAQ JSON-LD -->
+	{@html `<script type="application/ld+json">` + JSON.stringify({
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "WebPage",
+				"@id": "https://ordinarium.com.br/faq/#webpage",
+				"url": "https://ordinarium.com.br/faq",
+				"name": "Perguntas Frequentes — Ordinarium",
+				"description": "Encontre respostas sobre o Ordinarium, seus recursos, planos, privacidade e uso cotidianos.",
+				"inLanguage": "pt-BR"
+			},
+			{
+				"@type": "BreadcrumbList",
+				"@id": "https://ordinarium.com.br/faq/#breadcrumb",
+				"isPartOf": {
+					"@id": "https://ordinarium.com.br/faq/#webpage"
+				},
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Início",
+						"item": "https://ordinarium.com.br"
+					},
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "Perguntas Frequentes",
+						"item": "https://ordinarium.com.br/faq"
+					}
+				]
+			},
+			{
+				"@type": "FAQPage",
+				"@id": "https://ordinarium.com.br/faq/#faq",
+				"isPartOf": {
+					"@id": "https://ordinarium.com.br/faq/#webpage"
+				},
+				"inLanguage": "pt-BR",
+				"mainEntity": faqPageCategories.flatMap(category => 
+					category.items.map(item => ({
+						"@type": "Question",
+						"name": item.question,
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": item.answer
+						}
+					}))
+				)
+			}
+		]
+	}) + `</script>`}
 </svelte:head>
 
-<main class="min-h-screen bg-bg-dark text-text-light">
+<main id="main-content" class="min-h-screen bg-bg-dark text-text-light">
 	<!-- Back Link -->
 	<div class="max-w-4xl mx-auto px-6 md:px-12 pt-32 pb-8">
 		<a
@@ -62,7 +130,7 @@
 							<button
 								type="button"
 								onclick={() => toggle(categoryIndex, itemIndex)}
-								class="w-full flex items-center justify-between py-5 text-left cursor-pointer transition-colors duration-200 hover:text-primary focus:outline-none"
+								class="w-full flex items-center justify-between py-5 text-left cursor-pointer transition-colors duration-200 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 rounded-lg"
 							>
 								<span class="text-base md:text-lg font-serif font-medium text-text-light pr-4">
 									{item.question}
@@ -92,5 +160,3 @@
 		</section>
 	{/each}
 </main>
-
-<Footer />

@@ -3,8 +3,7 @@
 	import { fade } from 'svelte/transition';
 	import { SvelteSet } from 'svelte/reactivity';
 	import { Heart, X, Loader2, Sparkles, Plus, Check } from '@lucide/svelte';
-	import Navbar from '../../components/Navbar.svelte';
-	import Footer from '../../components/Footer.svelte';
+
 	import { supabase } from '../../lib/supabase';
 
 	// Static descriptions for predefined items
@@ -249,6 +248,7 @@
 		name="description"
 		content="Acompanhe o planejamento de novidades do Ordinarium. Vote nas funcionalidades mais desejadas e envie suas próprias sugestões."
 	/>
+	<meta name="robots" content="index, follow" />
 	<link rel="canonical" href="https://ordinarium.com.br/roadmap" />
 
 	<!-- Open Graph / Facebook -->
@@ -275,11 +275,48 @@
 		content="Acompanhe o planejamento de novidades do Ordinarium. Vote nas funcionalidades mais desejadas e envie suas próprias sugestões."
 	/>
 	<meta property="twitter:image" content="https://ordinarium.com.br/assets/image.png" />
+
+	<!-- Structured Data (JSON-LD) -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "WebPage",
+					"@id": "https://ordinarium.com.br/roadmap/#webpage",
+					"url": "https://ordinarium.com.br/roadmap",
+					"name": "Roadmap de Funcionalidades — Ordinarium",
+					"description": "Acompanhe o planejamento de novidades do Ordinarium. Vote nas funcionalidades mais desejadas e envie suas próprias sugestões.",
+					"inLanguage": "pt-BR"
+				},
+				{
+					"@type": "BreadcrumbList",
+					"@id": "https://ordinarium.com.br/roadmap/#breadcrumb",
+					"isPartOf": {
+						"@id": "https://ordinarium.com.br/roadmap/#webpage"
+					},
+					"itemListElement": [
+						{
+							"@type": "ListItem",
+							"position": 1,
+							"name": "Início",
+							"item": "https://ordinarium.com.br"
+						},
+						{
+							"@type": "ListItem",
+							"position": 2,
+							"name": "Sugestões de Funcionalidades",
+							"item": "https://ordinarium.com.br/roadmap"
+						}
+					]
+				}
+			]
+		}
+	</script>
 </svelte:head>
 
-<Navbar />
-
 <main
+	id="main-content"
 	class="min-h-screen bg-bg-dark text-text-light pt-32 pb-24 px-6 md:px-12 flex flex-col items-center"
 >
 	<div class="max-w-6xl w-full flex flex-col gap-16">
@@ -441,8 +478,6 @@
 	</div>
 </main>
 
-<Footer />
-
 <!-- Modal / Drawer -->
 {#if isModalOpen}
 	<!-- Backdrop -->
@@ -507,7 +542,7 @@
 							required
 							placeholder="Ex: Calendário Litúrgico Tradicional"
 							maxlength="100"
-							class="bg-bg-dark border border-border-gold/30 rounded-xl px-4 py-3.5 text-text-light font-sans text-sm focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/60 transition-all duration-200"
+							class="bg-bg-dark border border-border-gold/30 rounded-xl px-4 py-3.5 text-text-light font-sans text-sm focus-visible:outline-none focus-visible:border-primary/60 focus-visible:ring-1 focus-visible:ring-primary/60 transition-all duration-200"
 						/>
 					</div>
 
@@ -524,7 +559,7 @@
 							placeholder="Descreva detalhadamente o que você gostaria de ver e como isso ajudaria sua vida litúrgica."
 							rows="4"
 							maxlength="300"
-							class="bg-bg-dark border border-border-gold/30 rounded-xl px-4 py-3.5 text-text-light font-sans text-sm focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/60 transition-all duration-200 resize-none"
+							class="bg-bg-dark border border-border-gold/30 rounded-xl px-4 py-3.5 text-text-light font-sans text-sm focus-visible:outline-none focus-visible:border-primary/60 focus-visible:ring-1 focus-visible:ring-primary/60 transition-all duration-200 resize-none"
 						></textarea>
 					</div>
 

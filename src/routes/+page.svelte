@@ -1,7 +1,6 @@
 <script lang="ts">
-	import Navbar from '../components/Navbar.svelte';
+	import { inView } from '$lib/actions';
 	import Hero from '../components/Hero.svelte';
-	import ScreensShowcase from '../components/ScreensShowcase.svelte';
 	import FeatureShowcase from '../components/FeatureShowcase.svelte';
 	import LeoSections from '../components/LeoSections.svelte';
 	import PartnershipSection from '../components/PartnershipSection.svelte';
@@ -9,7 +8,6 @@
 	import TestimonialsSection from '../components/TestimonialsSection.svelte';
 	import WaitlistSection from '../components/WaitlistSection.svelte';
 	import DownloadSection from '../components/DownloadSection.svelte';
-	import Footer from '../components/Footer.svelte';
 </script>
 
 <svelte:head>
@@ -164,19 +162,17 @@
 	</script>
 </svelte:head>
 
-<Navbar />
-<main>
+<main id="main-content">
 	<Hero />
-	<ScreensShowcase />
 	<FeatureShowcase />
 
 	<!-- Breathing moment -->
 	<section class="w-full py-32 bg-bg-light px-6 md:px-12">
-		<div class="max-w-3xl mx-auto text-center">
-			<p class="text-2xl md:text-3xl font-serif italic leading-relaxed text-text-dark/80">
-				"Orai sem cessar."
+		<div class="max-w-3xl mx-auto text-center" use:inView>
+			<p class="reveal reveal-delay-1 text-2xl md:text-3xl font-serif italic leading-relaxed text-text-dark/80">
+				“Orai sem cessar.”
 			</p>
-			<p class="mt-6 text-sm text-text-dark/40 font-sans">— 1 Tessalonicenses 5:17</p>
+			<p class="reveal reveal-delay-2 mt-6 text-sm text-text-dark/60 font-sans">— 1 Tessalonicenses 5:17</p>
 		</div>
 	</section>
 
@@ -187,4 +183,3 @@
 	<WaitlistSection />
 	<DownloadSection />
 </main>
-<Footer />

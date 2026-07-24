@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { inView } from '$lib/actions';
 	import SectionTitle from './SectionTitle.svelte';
 	import { APP_URL } from '../lib/constants';
 	import { BookMarked, Church, ArrowRight } from '@lucide/svelte';
@@ -41,7 +42,7 @@
 	];
 </script>
 
-<section id="recursos" class="w-full py-24 bg-bg-light px-6 md:px-12">
+<section id="recursos" use:inView class="w-full py-24 bg-bg-light px-6 md:px-12">
 	<div class="max-w-6xl mx-auto">
 		<SectionTitle
 			title="Construído para apoiar sua vida cristã"
@@ -54,10 +55,11 @@
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-16">
 			<!-- Card 1: Liturgia Diária (Wide Card - 2/3) -->
 			<a
+				use:inView
 				href={APP_URL}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="group block bg-white border border-border-gold/20 hover:border-primary/40 rounded-[32px] p-8 md:p-10 flex flex-col lg:flex-row justify-between items-stretch overflow-hidden min-h-[480px] lg:col-span-2 lg:h-[440px] shadow-sm hover:shadow-xl hover:shadow-[0_0_30px_-5px_rgba(212,168,79,0.15)] hover:-translate-y-0.5 transition-all duration-300 text-left no-underline"
+				class="group block bg-white border border-border-gold/20 hover:border-primary/40 rounded-[32px] p-8 md:p-10 flex flex-col lg:flex-row justify-between items-stretch overflow-hidden min-h-[480px] lg:col-span-2 lg:h-[440px] shadow-sm hover:shadow-xl hover:shadow-[0_0_30px_-5px_rgba(212,168,79,0.15)] hover:-translate-y-0.5 transition-all duration-300 text-left no-underline reveal reveal-delay-1"
 			>
 				<div class="flex-1 flex flex-col justify-between pr-0 lg:pr-8 mb-8 lg:mb-0">
 					<div>
@@ -134,10 +136,11 @@
 
 			<!-- Card 2: Paróquias (Narrow Card - 1/3) -->
 			<a
+				use:inView
 				href={APP_URL}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="group block bg-white border border-border-gold/20 hover:border-primary/40 rounded-[32px] p-8 flex flex-col justify-between overflow-hidden min-h-[480px] lg:col-span-1 lg:h-[440px] shadow-sm hover:shadow-xl hover:shadow-[0_0_30px_-5px_rgba(212,168,79,0.15)] hover:-translate-y-0.5 transition-all duration-300 text-left no-underline"
+				class="group block bg-white border border-border-gold/20 hover:border-primary/40 rounded-[32px] p-8 flex flex-col justify-between overflow-hidden min-h-[480px] lg:col-span-1 lg:h-[440px] shadow-sm hover:shadow-xl hover:shadow-[0_0_30px_-5px_rgba(212,168,79,0.15)] hover:-translate-y-0.5 transition-all duration-300 text-left no-underline reveal reveal-delay-2"
 			>
 				<div>
 					<!-- Icon badge -->
@@ -195,10 +198,10 @@
 
 			<!-- Card 3: Orações (Narrow Card - 1/3) -->
 			<a
-				href={APP_URL}
-				target="_blank"
+				use:inView
+				href={APP_URL} target="_blank"
 				rel="noopener noreferrer"
-				class="group block bg-white border border-border-gold/20 hover:border-primary/40 rounded-[32px] p-8 flex flex-col justify-between overflow-hidden min-h-[480px] lg:col-span-1 lg:h-[440px] shadow-sm hover:shadow-xl hover:shadow-[0_0_30px_-5px_rgba(212,168,79,0.15)] hover:-translate-y-0.5 transition-all duration-300 text-left no-underline"
+				class="group block bg-white border border-border-gold/20 hover:border-primary/40 rounded-[32px] p-8 flex flex-col justify-between overflow-hidden min-h-[480px] lg:col-span-1 lg:h-[440px] shadow-sm hover:shadow-xl hover:shadow-[0_0_30px_-5px_rgba(212,168,79,0.15)] hover:-translate-y-0.5 transition-all duration-300 text-left no-underline reveal reveal-delay-3"
 			>
 				<div>
 					<!-- Icon badge -->
@@ -256,10 +259,11 @@
 
 			<!-- Card 4: Exame de Consciência (Wide Card - 2/3) -->
 			<a
+				use:inView
 				href={APP_URL}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="group block bg-white border border-border-gold/20 hover:border-primary/40 rounded-[32px] p-8 md:p-10 flex flex-col lg:flex-row justify-between items-stretch overflow-hidden min-h-[480px] lg:col-span-2 lg:h-[440px] shadow-sm hover:shadow-xl hover:shadow-[0_0_30px_-5px_rgba(212,168,79,0.15)] hover:-translate-y-0.5 transition-all duration-300 text-left no-underline"
+				class="group block bg-white border border-border-gold/20 hover:border-primary/40 rounded-[32px] p-8 md:p-10 flex flex-col lg:flex-row justify-between items-stretch overflow-hidden min-h-[480px] lg:col-span-2 lg:h-[440px] shadow-sm hover:shadow-xl hover:shadow-[0_0_30px_-5px_rgba(212,168,79,0.15)] hover:-translate-y-0.5 transition-all duration-300 text-left no-underline reveal reveal-delay-4"
 			>
 				<div class="flex-1 flex flex-col justify-between pr-0 lg:pr-8 mb-8 lg:mb-0">
 					<div>

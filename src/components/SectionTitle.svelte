@@ -22,7 +22,7 @@
 			? 'text-text-dark'
 			: 'text-text-light'}"
 	>
-		{@html title}
+		{title}
 	</h2>
 
 	{#if subtitle}
@@ -31,7 +31,7 @@
 				? 'text-text-dark/70'
 				: 'text-text-secondary'}"
 		>
-			{@html subtitle}
+			{subtitle}
 		</p>
 	{/if}
 </div>

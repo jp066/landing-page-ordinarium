@@ -12,9 +12,7 @@
 		Church,
 		MapPin
 	} from '@lucide/svelte';
-	import Navbar from '../../components/Navbar.svelte';
 	import EndpointCard from '../../components/EndpointCard.svelte';
-	import Footer from '../../components/Footer.svelte';
 
 	const prayersEndpoints = [
 		{ method: 'GET', path: '/api/v1/health', desc: 'Verificar integridade da API' },
@@ -167,6 +165,27 @@
 					"inLanguage": "pt-BR"
 				},
 				{
+					"@type": "BreadcrumbList",
+					"@id": "https://ordinarium.com.br/api/#breadcrumb",
+					"isPartOf": {
+						"@id": "https://ordinarium.com.br/api/#webpage"
+					},
+					"itemListElement": [
+						{
+							"@type": "ListItem",
+							"position": 1,
+							"name": "Início",
+							"item": "https://ordinarium.com.br"
+						},
+						{
+							"@type": "ListItem",
+							"position": 2,
+							"name": "API para Desenvolvedores",
+							"item": "https://ordinarium.com.br/api"
+						}
+					]
+				},
+				{
 					"@type": "TechArticle",
 					"@id": "https://ordinarium.com.br/api/#article",
 					"headline": "API Ordinarium - Documentação para Desenvolvedores",
@@ -187,9 +206,7 @@
 	</script>
 </svelte:head>
 
-<Navbar />
-
-<main>
+<main id="main-content">
 	<div class="pt-32 pb-12 px-6 md:px-12">
 		<div class="max-w-5xl mx-auto text-center">
 			<span class="text-xs font-semibold tracking-widest uppercase text-primary mb-4 inline-block"
@@ -1293,5 +1310,3 @@
 		</div>
 	</div>
 </main>
-
-<Footer />

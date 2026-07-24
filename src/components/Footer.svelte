@@ -26,8 +26,7 @@
 				</a>
 
 				<p class="text-xs md:text-sm text-text-secondary leading-relaxed mb-6 max-w-sm">
-					Um projeto dedicado a facilitar a vida de oração dos católicos brasileiros.
-				</p>
+O <strong>Ordinarium</strong> é uma plataforma católica brasileira criada para acompanhar o fiel em toda a sua jornada espiritual. Em um único aplicativo, reúne a Liturgia Diária, a Bíblia, orações tradicionais, o Santo do Dia, horários de missas e confissões, localização de paróquias, exame de consciência, planos espirituais, diário espiritual, assistente inteligente, conteúdos de formação e outras ferramentas desenvolvidas para fortalecer a vivência da fé no cotidiano.				</p>
 
 				<!-- Social Links -->
 				<div class="flex items-center gap-4">

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { ArrowLeft, Church, Code, Rocket, Handshake } from '@lucide/svelte';
 	import Button from '../../../components/Button.svelte';
-	import Footer from '../../../components/Footer.svelte';
 	import { ARCHDIOCESE_URL } from '../../../lib/constants';
 </script>
 
@@ -31,7 +30,7 @@
 	<meta property="og:image" content="https://ordinarium.com.br/assets/image.png" />
 </svelte:head>
 
-<main class="min-h-screen bg-bg-dark text-text-light">
+<main id="main-content" class="min-h-screen bg-bg-dark text-text-light">
 	<!-- Back Link -->
 	<div class="max-w-4xl mx-auto px-6 md:px-12 pt-32 pb-8">
 		<a
@@ -151,5 +150,3 @@
 		</div>
 	</section>
 </main>
-
-<Footer />

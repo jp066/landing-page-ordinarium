@@ -10,7 +10,7 @@
 	--color-primary-dim: rgba(212, 168, 79, 0.1);
 	--color-text-dark: #202020;
 	--color-text-light: #f5f5f5;
-	--color-text-secondary: #8b8b8b;
+	--color-text-secondary: #a3a3a3;
 	--color-border-gold: rgba(212, 168, 79, 0.18);
 
 	--font-gothic: 'UnifrakturCook', serif;
@@ -20,6 +20,15 @@
 
 	--transition-fast: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	--transition-normal: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global focus-visible styling for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 4px;
 }
 
 /* Base resets & styles */
@@ -88,6 +97,35 @@ body {
 
 .animate-fade-in-up {
 	animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scroll-triggered reveal animations */
+.reveal {
+	opacity: 0;
+	transform: translateY(24px);
+	transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+		transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.in-view {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0ms; }
+.reveal-delay-2 { transition-delay: 100ms; }
+.reveal-delay-3 { transition-delay: 200ms; }
+.reveal-delay-4 { transition-delay: 300ms; }
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal,
+	.animate-fade-in-up,
+	.carousel-track {
+		animation: none !important;
+		opacity: 1 !important;
+		transform: none !important;
+		transition: none !important;
+	}
 }
 
 /* Scrollbar for carousel */

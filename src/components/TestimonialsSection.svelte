@@ -1,22 +1,17 @@
 <script lang="ts">
+	import { inView } from '$lib/actions';
 	import { testimonials } from '../lib/data';
 	import SectionTitle from './SectionTitle.svelte';
 
 	const items = [...testimonials, ...testimonials];
 </script>
 
-<section id="depoimentos" class="w-full py-24 bg-bg-light overflow-hidden">
+<section id="depoimentos" use:inView class="w-full py-24 bg-bg-light overflow-hidden">
 	<div class="max-w-5xl mx-auto px-6 md:px-12">
 		<SectionTitle supertitle="" title="O que dizem os fiéis" centered={false} theme="light" />
 	</div>
 
-	<div
-		class="mt-12 group"
-		role="region"
-		aria-label="Carrossel de depoimentos"
-		onmouseenter={() => {}}
-		onmouseleave={() => {}}
-	>
+	<div class="mt-12 group" role="region" aria-label="Carrossel de depoimentos">
 		<div class="carousel-track flex gap-6 px-6 md:px-12">
 			{#each items as item, i (`${item.name}-${i}`)}
 				<div
@@ -57,6 +52,12 @@
 
 	.group:hover .carousel-track {
 		animation-play-state: paused;
+	}
+
+	@media (pointer: coarse) {
+		.carousel-track {
+			animation-duration: 60s;
+		}
 	}
 
 	@keyframes scroll-left {

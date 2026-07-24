@@ -1,21 +1,19 @@
 <script lang="ts">
 	import { APP_URL } from '../lib/constants';
+	import { inView } from '$lib/actions';
 	import Button from './Button.svelte';
 
-	// Substitua pelo caminho da sua foto quando tiver: '/assets/sua-foto.jpg'
-	const heroBg =
-		'https://plus.unsplash.com/premium_photo-1678305037622-474d23a7d906?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+	const heroBg = '/assets/bg-hero.avif';
 </script>
 
 <section
 	id="hero"
 	class="hero-section relative min-h-screen flex items-center overflow-hidden text-text-light"
 >
-	<!-- Imagem de fundo -->
 	{#if heroBg}
 		<img
 			src={heroBg}
-			alt="Hero background"
+			alt="Ambiente de oração solene e recolhimento espiritual com iluminação suave em uma igreja"
 			class="hero-bg-img absolute inset-0 w-full h-full object-cover object-center"
 			fetchpriority="high"
 		/>
@@ -23,42 +21,34 @@
 		<div class="hero-placeholder absolute inset-0"></div>
 	{/if}
 
-	<!--
-		Overlay gradiente:
-		- Esquerda: mais transparente → imagem aparece
-		- Direita: mais escuro → texto legível
-		(igual ao efeito da referência)
-	-->
 	<div class="hero-overlay absolute inset-0"></div>
 
-	<!-- Escurecimento geral sutil para o topo (por cima da navbar) -->
 	<div class="hero-top-fade absolute top-0 left-0 right-0 h-40 pointer-events-none"></div>
 
-	<!-- Conteúdo -->
 	<div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-24 pb-12">
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[70vh]">
-			<!-- Coluna direita: texto -->
 			<div class="flex flex-col items-start text-left lg:justify-self-end">
-				<!-- Título -->
 				<h1
-					class="text-4xl md:text-5xl xl:text-[3.5rem] font-bold leading-[1.1] tracking-tight mb-5 text-white"
+					use:inView
+					class="reveal reveal-delay-1 text-4xl md:text-5xl xl:text-[3.5rem] font-bold leading-[1.1] tracking-tight mb-5 text-white"
 				>
 					Viva a <span class="text-primary">fé católica</span><br />
 					todos os dias,<br />
 					em um só lugar.
 				</h1>
 
-				<!-- Descrição -->
-				<p class="text-base md:text-lg text-white/65 leading-relaxed mb-10 max-w-md">
-					Liturgia, orações, paróquias e muito mais para acompanhar sua caminhada espiritual.
+				<p
+					use:inView
+					class="reveal reveal-delay-2 text-base md:text-lg text-white/80 leading-relaxed mb-10 max-w-md"
+				>
+					Liturgia diária, orações católicas, horários de missas, diretório de paróquias e exames de consciência para acompanhar sua vida espiritual todos os dias.
 				</p>
 
-				<!-- CTA -->
-				<div class="flex flex-col sm:flex-row gap-3">
+				<div use:inView class="reveal reveal-delay-3 flex flex-col sm:flex-row gap-3">
 					<Button href={APP_URL} variant="white" size="lg" class="group font-semibold">
 						Experimente o &nbsp; <span class="font-gothic">Ordinarium</span>
 					</Button>
-					<Button href="/roadmap" variant="ghost" size="lg" class="lg:hidden">
+					<Button href="/roadmap" variant="ghost" size="lg">
 						Sugestões
 					</Button>
 				</div>
@@ -66,7 +56,6 @@
 		</div>
 	</div>
 
-	<!-- Fade para próxima seção -->
 	<div class="hero-bottom-fade absolute bottom-0 left-0 right-0 h-28 pointer-events-none"></div>
 </section>
 

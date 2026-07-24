@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import { Heart, X, Loader2, Check } from '@lucide/svelte';
-	import Navbar from '../../components/Navbar.svelte';
-	import Footer from '../../components/Footer.svelte';
 	import SectionTitle from '../../components/SectionTitle.svelte';
 	import SupportCard from '../../components/SupportCard.svelte';
 	import { supportReasons } from '$lib/data';
@@ -95,11 +93,26 @@
 		content="Ajude o Ordinarium a continuar existindo. Sua contribuição mantém servidores, desenvolvimento, inteligência artificial e conteúdos para católicos no Brasil."
 	/>
 	<meta property="twitter:image" content="https://ordinarium.com.br/assets/image.png" />
+
+	<!-- Structured Data (JSON-LD) -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "WebPage",
+					"@id": "https://ordinarium.com.br/apoiar/#webpage",
+					"url": "https://ordinarium.com.br/apoiar",
+					"name": "Apoiar o Ordinarium — Contribua com o projeto",
+					"description": "Ajude o Ordinarium a continuar existindo. Sua contribuição mantém servidores, desenvolvimento, inteligência artificial e conteúdos para católicos no Brasil.",
+					"inLanguage": "pt-BR"
+				}
+			]
+		}
+	</script>
 </svelte:head>
 
-<Navbar />
-
-<main class="min-h-screen bg-bg-dark text-text-light pt-32 pb-24 px-6 md:px-12">
+<main id="main-content" class="min-h-screen bg-bg-dark text-text-light pt-32 pb-24 px-6 md:px-12">
 	<div class="max-w-5xl mx-auto flex flex-col gap-24">
 		<!-- 1. Hero -->
 		<section class="flex flex-col items-center text-center gap-8 animate-fade-in-up">
@@ -203,8 +216,6 @@
 	</div>
 </main>
 
-<Footer />
-
 {#if isModalOpen}
 	<!-- Backdrop -->
 	<div
@@ -303,7 +314,7 @@
 									bind:value={customAmount}
 									placeholder="Digite o valor"
 									min="1"
-									class="w-full bg-bg-dark border border-border-gold/30 rounded-xl px-4 py-3 text-text-light font-sans text-sm focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/60 transition-all duration-200"
+									class="w-full bg-bg-dark border border-border-gold/30 rounded-xl px-4 py-3 text-text-light font-sans text-sm focus-visible:outline-none focus-visible:border-primary/60 focus-visible:ring-1 focus-visible:ring-primary/60 transition-all duration-200"
 								/>
 							{/if}
 						</div>
@@ -323,7 +334,7 @@
 							placeholder="Deixe uma mensagem de apoio ao projeto..."
 							rows="3"
 							maxlength="300"
-							class="bg-bg-dark border border-border-gold/30 rounded-xl px-4 py-3.5 text-text-light font-sans text-sm focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/60 transition-all duration-200 resize-none"
+							class="bg-bg-dark border border-border-gold/30 rounded-xl px-4 py-3.5 text-text-light font-sans text-sm focus-visible:outline-none focus-visible:border-primary/60 focus-visible:ring-1 focus-visible:ring-primary/60 transition-all duration-200 resize-none"
 						></textarea>
 					</div>
 

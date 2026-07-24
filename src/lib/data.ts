@@ -353,8 +353,10 @@ export const footerColumns: FooterColumn[] = [
 		title: 'Navegação',
 		links: [
 			{ label: 'Recursos', href: '/#recursos' },
-			{ label: 'Sobre', href: '/#sobre' },
+			{ label: 'Sobre', href: '/#recursos' },
+			{ label: 'Blog', href: '/blog' },
 			{ label: 'Perguntas frequentes', href: '/faq' },
+			{ label: 'Sugestões', href: '/roadmap' },
 			{ label: 'Apoiar', href: '/apoiar' },
 			{ label: 'Contato', href: '/#contato' }
 		]

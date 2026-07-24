@@ -1,7 +1,8 @@
 <script lang="ts">
-	import Button from './Button.svelte';
+	import { X, Menu } from '@lucide/svelte';
 
 	let isScrolled = $state(true);
+	let isMenuOpen = $state(false);
 
 	$effect(() => {
 		const handleScroll = () => {
@@ -10,6 +11,30 @@
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
 	});
+
+	$effect(() => {
+		if (isMenuOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+		return () => {
+			document.body.style.overflow = '';
+		};
+	});
+
+	const navLinks = [
+		{ label: 'Recursos', href: '/#recursos' },
+		{ label: 'Blog', href: '/blog' },
+		{ label: 'FAQ', href: '/faq' },
+		{ label: 'API', href: '/api' },
+		{ label: 'Sugestões', href: '/roadmap' },
+		{ label: 'Apoiar', href: '/apoiar' }
+	];
+
+	function closeMenu() {
+		isMenuOpen = false;
+	}
 </script>
 
 <header
@@ -31,16 +56,57 @@
 			<span class="font-gothic text-2xl font-bold tracking-wide text-primary">Ordinarium</span>
 		</a>
 
+		<!-- Desktop Navigation Menu -->
+		<nav class="hidden lg:flex items-center gap-6">
+			{#each navLinks as link}
+				<a
+					href={link.href}
+					class="text-sm font-sans font-medium text-text-secondary hover:text-text-light transition-fast"
+				>
+					{link.label}
+				</a>
+			{/each}
+		</nav>
+
 		<div class="flex items-center gap-3">
-			<Button href="/roadmap" variant="ghost" size="sm" class="!hidden lg:!inline-flex"
-				>Sugestões</Button
-			>
-			<Button
+			<button
 				onclick={() =>
 					document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-				variant="primary"
-				size="sm">Baixe agora</Button
+				class="inline-flex items-center justify-center font-sans font-medium rounded-full transition-fast px-4 py-2 text-xs bg-primary text-bg-dark hover:bg-primary-hover active:scale-[0.98] cursor-pointer"
 			>
+				Baixe agora
+			</button>
+
+			<button
+				onclick={() => (isMenuOpen = !isMenuOpen)}
+				class="lg:hidden p-2 rounded-lg text-text-secondary hover:text-text-light hover:bg-white/5 transition-fast cursor-pointer"
+				aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+				aria-expanded={isMenuOpen}
+			>
+				{#if isMenuOpen}
+					<X class="w-6 h-6" />
+				{:else}
+					<Menu class="w-6 h-6" />
+				{/if}
+			</button>
 		</div>
 	</div>
+
+	{#if isMenuOpen}
+		<div
+			class="lg:hidden absolute top-full left-0 w-full bg-bg-dark/95 backdrop-blur-xl border-b border-border-gold/20 shadow-2xl"
+		>
+			<nav class="flex flex-col px-6 py-4 gap-1">
+				{#each navLinks as link}
+					<a
+						href={link.href}
+						onclick={closeMenu}
+						class="px-4 py-3 rounded-xl text-sm text-text-secondary hover:text-text-light hover:bg-white/5 transition-fast"
+					>
+						{link.label}
+					</a>
+				{/each}
+			</nav>
+		</div>
+	{/if}
 </header>

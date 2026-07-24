@@ -12,7 +12,7 @@
 	let { icon: IconComponent, title, description, href, theme = 'dark' }: Props = $props();
 </script>
 
-<a {href} class="group block p-6 transition-colors duration-200">
+<a {href} class="group block p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 rounded-2xl">
 	<div class="flex items-start gap-4">
 		<div
 			class="w-10 h-10 rounded-lg bg-primary/8 text-primary flex items-center justify-center shrink-0 transition-colors duration-200 group-hover:bg-primary group-hover:text-bg-dark"

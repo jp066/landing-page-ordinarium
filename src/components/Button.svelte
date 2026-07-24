@@ -28,7 +28,7 @@
 	}: Props = $props();
 
 	const baseStyles =
-		'inline-flex items-center justify-center font-sans font-medium rounded-full transition-fast focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-bg-dark disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
+		'inline-flex items-center justify-center font-sans font-medium rounded-full transition-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
 
 	const variants: Record<'primary' | 'secondary' | 'outline' | 'ghost' | 'white', string> = {
 		primary: 'bg-primary text-bg-dark hover:bg-primary-hover active:scale-[0.98]',
@@ -46,13 +46,23 @@
 	};
 </script>
 
-{#if href}
+{#if onclick}
+	<button
+		{type}
+		class="{baseStyles} {variants[variant]} {sizes[size]} {className}"
+		{disabled}
+		{onclick}
+	>
+		{#if children}
+			{@render children()}
+		{/if}
+	</button>
+{:else if href}
 	<a
 		{href}
 		class="{baseStyles} {variants[variant]} {sizes[size]} {className}"
 		{target}
 		{rel}
-		{onclick}
 	>
 		{#if children}
 			{@render children()}
@@ -63,7 +73,6 @@
 		{type}
 		class="{baseStyles} {variants[variant]} {sizes[size]} {className}"
 		{disabled}
-		{onclick}
 	>
 		{#if children}
 			{@render children()}
